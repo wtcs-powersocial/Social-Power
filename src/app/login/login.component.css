@@ -1,0 +1,52 @@
+.login-form-1{
+  padding: 5%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.form-modal h4{
+  text-align: center;
+  color: white;
+  border-radius: 1rem;
+  background-color: #45ad9e;
+  padding: 5px;
+}
+
+.login-container form{
+  padding: 5%;
+}
+.btnSubmit
+{
+  width: 50%;
+  border-radius: 1rem;
+  padding: 1.5%;
+  border: none;
+  cursor: pointer;
+}
+.form-modal .btnSubmit{
+  font-weight: 600;
+  color: #fff;
+  background-color: #45ad9e;
+}
+
+.form-modal .ForgetPwd{
+  color: #45ad9e;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.form-modal{
+	max-width: 450px;
+	background: #FAFAFA;
+	padding: 30px;
+	margin: 50px auto;
+	box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+	border-radius: 10px;
+	border: 6px solid #2e9283;;
+}
+
+.my-img {
+  border-radius: 100%;
+  color: aquamarine;
+  width: 15%;
+  height: 30%;
+  top: 10px;
+}

@@ -1,3 +1,29 @@
-<p>
-  login works!
-</p>
+<div class='login-page img-fluid'>
+
+  <div class="container login-container">
+      <div class="row">
+          <div class="col-md-6 form-modal">
+              <!-- <img [src]='image' class='my-img center'> -->
+              <h4>Acesse sua conta</h4>
+              <form>
+                  <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Email *" #txtEmail />
+                  </div>
+                  <div class="form-group">
+                      <input type="password" class="form-control" placeholder="Password *" #txtPsw />
+                  </div>
+                  <div class="form-group">
+                      <input type="submit" class="btnSubmit" value="Login" (click)='login(txtEmail.value, txtPsw.value)' />
+                      <input type="password" class="form-control" placeholder="Password *" #txtPwd />
+                  </div>
+                  <div class="form-group">
+                      <input type="submit" class="btnSubmit" value="Login" (click)='login(txtEmail.value, txtPwd.value)' />
+                  </div>
+                  <div class="form-group">
+                      <a [routerLink]="['new-user']" class="ForgetPwd">Criar conta</a><br>
+                      <a href="#" class="ForgetPwd">Perdeu a senha?</a>
+                  </div>
+              </form>
+          </div>
+  </div>
+  </div>
