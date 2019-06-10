@@ -26,4 +26,10 @@ export class DenunciaService {
     })
     .catch((response: any) => response);
   }
+
+  public getDenunciasByUser(id: number): Promise<DenunciaModel[]> {
+    return this.httpService.get(`${urlApi}/denuncias?autor.idUser=${id}`).toPromise()
+    .then((r: any) => r)
+    .catch((r: any) => r);
+  }
 }
