@@ -1,0 +1,25 @@
+
+.btn {
+  margin: 2px;
+  float: left;
+}
+
+.row {
+  margin-bottom: 10px;
+}
+
+.my-box-btn {
+  left: 50%;
+}
+
+.container {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  font-size: 12pt;
+}
+
+.centralizador {
+  margin: 0 auto;
+  width: 500px;
+  padding: 20px;
+}

@@ -1,3 +1,16 @@
-<p>
-  home works!
-</p>
+<div class='container'>
+  <div class='jumbotron' *ngFor="let post of posts" >
+      <div class="card centralizador" style="width: 30rem;">
+          <img [src]='post.imagem' class="card-img-top img-fluid" alt="imagem da denúncia">
+          <div class="card-body">
+            <p class="card-title"><strong>Categoria:</strong> {{post.categoria}}</p>
+            <p>{{post.autor}}</p>
+            <p class="card-text"><strong>Denúncia:</strong> {{post.descricao}}</p>
+            <div class='align-content-end'>
+                <a href="#" class="btn btn-primary">Like</a>
+                <a href="#" class="btn btn-danger">Deslike</a>
+            </div>
+          </div>
+        </div>
+  </div>
+</div>
