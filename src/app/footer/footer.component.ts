@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
+  equipe: string;
+  foudantionYear: number;
   constructor() { }
 
   ngOnInit() {
+    this.equipe = 'AKR Soluções Tecnlógicas';
+    this.foudantionYear = 2019;
   }
 
 }
