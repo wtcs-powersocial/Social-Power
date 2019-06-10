@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 // instalados
 import { AgmCoreModule } from '@agm/core';
 import {WebcamModule} from 'ngx-webcam';
-
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 // meus componentes
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,7 +36,8 @@ import { NewLoginComponent } from './new-login/new-login.component';
       apiKey: 'AIzaSyDHW2OC0FXfUD-BiEGOwHBM8VaNDizzXk0',
       libraries: ['places']
     }),
-    WebcamModule
+    WebcamModule,
+    AngularFontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
