@@ -1,0 +1,22 @@
+<div><h4>Minhas denúncias</h4></div>
+
+<div class='container'>
+  <div *ngFor='let denouce of myDenouces' class='jumbotron'>
+      <div class="card centralizador" style="width: 30rem;">
+          <p>Você publicou:</p>
+          <img [src]='denouce.imagem' class="card-img-top img-fluid" alt="imagem da denúncia">
+          <div class="card-body">
+            <p class="card-title"><strong>Categoria:</strong> {{denouce.categoria}}</p>
+            <p class="card-text"><strong>Denúncia:</strong> {{denouce.descricao}}</p>
+            <div class='align-content-end'>
+                <a href="#" class="btn btn-primary my-btn">
+                    <i class="fa fa-thumbs-up fa-2x"></i>
+                </a>
+                <a href="#" class="btn btn-danger my-btn">
+                    <i class="fa fa-thumbs-down fa-2x"></i>
+                </a>
+            </div>
+          </div>
+        </div>
+  </div>
+</div>

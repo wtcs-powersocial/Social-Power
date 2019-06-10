@@ -16,6 +16,7 @@ import { LoginComponent } from './login/login.component';
 import { MapComponent } from './map/map.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NewLoginComponent } from './new-login/new-login.component';
+import { HistoryComponent } from './history/history.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NewLoginComponent } from './new-login/new-login.component';
     LoginComponent,
     MapComponent,
     NavbarComponent,
-    NewLoginComponent
+    NewLoginComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,

@@ -6,13 +6,15 @@ import { NewLoginComponent } from './new-login/new-login.component';
 import { HomeComponent } from './home/home.component';
 import { MapComponent } from './map/map.component';
 import { DenouceComponent } from './denouce/denouce.component';
+import { HistoryComponent } from './history/history.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
-  {path: 'new-user', component: NewLoginComponent},
-  {path: 'home', component: HomeComponent},
-  {path: 'mapa', component: MapComponent},
-  {path: 'denouce', component: DenouceComponent}
+  {path: 'cadastro', component: NewLoginComponent},
+  {path: 'principal', component: HomeComponent},
+  {path: 'show', component: MapComponent},
+  {path: 'nova-denuncia', component: DenouceComponent},
+  {path: 'minhas-denuncias', component: HistoryComponent}
 ];
 
 @NgModule({
