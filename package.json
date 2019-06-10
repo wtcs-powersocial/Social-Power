@@ -1,6 +1,7 @@
 {
   "name": "social-power",
   "version": "0.0.0",
+  "node": "12.2.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
