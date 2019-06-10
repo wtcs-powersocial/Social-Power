@@ -50,3 +50,7 @@
   height: 30%;
   top: 10px;
 }
+
+input[type="text"], input[type="password"] {
+  padding-left: 25px;
+}

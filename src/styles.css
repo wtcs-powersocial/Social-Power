@@ -13,3 +13,14 @@
     top: 0;
     background-size: cover;
 }
+
+.my-icons {
+  position: absolute;
+  margin-right: 18px;
+  margin-top: 1px;
+  width: 44px;
+  height: 36px;
+  padding-top: 8px;
+  padding-left: 5px;
+  border: 1px solid #fff;
+}
