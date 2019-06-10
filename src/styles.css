@@ -24,3 +24,14 @@
   padding-left: 5px;
   border: 1px solid #fff;
 }
+
+.centralizador {
+  margin: 0 auto;
+  width: 500px;
+  padding: 20px;
+}
+
+.my-btn {
+  margin: 2px;
+}
+
