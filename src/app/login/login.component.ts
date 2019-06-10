@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
 
   public login(email: string, senha: string): void {
     this.status = this.service.logar(email, senha);
-    this.status ? this.rota.navigate(['home']) : alert('Acesso negado!');
+    this.status ? this.rota.navigate(['principal']) : alert('Acesso negado!');
   }
 
 }
