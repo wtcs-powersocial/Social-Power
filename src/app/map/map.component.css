@@ -1,0 +1,12 @@
+agm-map {
+  height: 380px;
+}
+
+.my-box {
+  color: white;
+  background-color: #EE5C42;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
