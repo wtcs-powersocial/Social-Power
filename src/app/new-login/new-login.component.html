@@ -1,3 +1,26 @@
-<p>
-  new-login works!
-</p>
+<div class='login-page'>
+  <form class="form-style-9">
+    <h1>Novo Cadastro</h1>
+    <ul>
+      <li>
+          <input type="text" class="field-style field-split align-left" placeholder="Nome" #nameUser/>
+          <input type="email" class="field-style field-split align-right" placeholder="Email" #emailUser />
+
+      </li>
+      <li>
+          <input type="password" class="field-style field-split align-left" placeholder="Senha" #pswUser1 />
+          <input type="password" class="field-style field-split align-right" placeholder="Repita senha" #pswUser2 />
+      </li>
+      <li>
+        <input type="text" class="field-style field-full align-none" placeholder="Estado" #ufUser/>
+      </li>
+      <li>
+        <input type="text" class="field-style field-full align-none" placeholder="Cidade" #cityUser />
+      </li>
+      <li>
+      <input type="submit" value="Criar Conta" style='width: 100%' (click)='addUser(nameUser.value, pswUser1.value, emailUser.value, ufUser.value, cityUser.values)' />
+      </li>
+    </ul>
+  </form>
+
+</div>
