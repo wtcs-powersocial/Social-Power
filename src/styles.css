@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+.login-page
+{
+    background-image: url('src/assets/new-york-crop.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    padding: 3em;
+    position: relative;
+    right: 0;
+    top: 0;
+    background-size: cover;
+}
