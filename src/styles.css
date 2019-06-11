@@ -31,7 +31,11 @@
   padding: 20px;
 }
 
-.my-btn {
+.my-spcace {
   margin: 2px;
 }
 
+.my-btn {
+  background-color: #2e9283;
+  color:white;
+}

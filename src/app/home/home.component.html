@@ -1,20 +1,23 @@
+<app-menu></app-menu>
 <div class='container'>
-  <div class='jumbotron' *ngFor="let post of posts" >
-      <div class="card centralizador" style="width: 30rem;">
-          <p style='color: #4abdac;'><strong>{{post.autor.name}}</strong></p>
-          <img [src]='post.imagem' class="card-img-top img-fluid" alt="imagem da denúncia">
-          <div class="card-body">
-            <p class="card-title"><strong>Categoria:</strong> {{post.categoria}}</p>
-            <p class="card-text"><strong>Denúncia:</strong> {{post.descricao}}</p>
-            <div class='align-content-end'>
-                <a href="#" class="btn btn-primary my-btn">
-                    <i class="fa fa-thumbs-up fa-2x"></i>
-                </a>
-                <a href="#" class="btn btn-danger my-btn">
-                    <i class="fa fa-thumbs-down fa-2x"></i>
-                </a>
+  <div class='col'>
+      <div *ngFor="let post of posts" >
+          <div class="card centralizador" style="width: 30rem;">
+              <p style='color: #4abdac;'><strong>{{post.autor.name}}</strong></p>
+              <img [src]='post.imagem' class="card-img-top img-fluid" alt="imagem da denúncia">
+              <div class="card-body">
+                <p class="card-title"><strong>Categoria:</strong> {{post.categoria}}</p>
+                <p class="card-text"><strong>Denúncia:</strong> {{post.descricao}}</p>
+                <div class='align-content-end'>
+                    <a href="#" class="btn btn-primary my-btn">
+                        <i class="fa fa-thumbs-up fa-2x"></i>
+                    </a>
+                    <a href="#" class="btn btn-danger my-btn">
+                        <i class="fa fa-thumbs-down fa-2x"></i>
+                    </a>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+      </div>
   </div>
 </div>
