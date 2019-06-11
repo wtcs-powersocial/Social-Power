@@ -1,4 +1,7 @@
-<div class="container">
+<div>
+  <app-menu></app-menu>
+</div>
+<div class='container'>
   <div class='my-box text-center'><h4>Mapa de denúncias</h4></div>
     <agm-map [latitude]='latitude' [longitude]='longitude' [zoom]='zoom'>
         <agm-marker *ngFor='let denuncia of denuncias'
