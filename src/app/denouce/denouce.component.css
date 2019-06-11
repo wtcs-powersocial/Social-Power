@@ -19,4 +19,34 @@ agm-map {
 #video { background-color: #000000; }
 #canvas { display: none; } li { display: inline; padding: 5px; }
 
-ul {padding: 2px;}
+ul {
+  padding: 2px;
+  list-style-type: none;
+}
+
+.container {
+  margin-top: 10px;
+}
+
+.my-title {
+  padding: 10px;
+  background-color: #2e9283;
+  color: white;
+  border-radius: 20px;
+}
+
+.my-s {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 2px;
+}
+
+.my-btn {
+  background-color: #2e9283;
+  color:white;
+}
+
+.my-p {
+  color: #4abdac;
+}
+

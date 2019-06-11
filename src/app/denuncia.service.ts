@@ -6,6 +6,7 @@ import { retry } from 'rxjs/operators';
 
 import { DenunciaModel } from './shared/denuncia.model';
 import { urlApi } from './shared/app.api';
+import { CategoryModel } from './shared/category.model';
 
 @Injectable({
   providedIn: 'root',
@@ -29,6 +30,12 @@ export class DenunciaService {
 
   public getDenunciasByUser(id: number): Promise<DenunciaModel[]> {
     return this.httpService.get(`${urlApi}/denuncias?autor.idUser=${id}`).toPromise()
+    .then((r: any) => r)
+    .catch((r: any) => r);
+  }
+
+  public getCategories(): Promise<CategoryModel[]> {
+    return this.httpService.get(`${urlApi}/categories`).toPromise()
     .then((r: any) => r)
     .catch((r: any) => r);
   }

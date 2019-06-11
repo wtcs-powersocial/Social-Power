@@ -7,6 +7,8 @@ import {WebcamImage} from 'ngx-webcam';
 import { DenunciaModel } from './../shared/denuncia.model';
 import { DenunciaService } from '../denuncia.service';
 import { CategoryModel } from '../shared/category.model';
+import { Router } from '@angular/router';
+import { Route } from '@angular/router';
 
 @Component({
   selector: 'app-denouce',
@@ -34,7 +36,7 @@ export class DenouceComponent implements OnInit {
   currrentLng: number;
   // exibir esses dados em uma outra div?
   show: boolean;
-  constructor(private service: DenunciaService) {
+  constructor(private service: DenunciaService, private rota: Router) {
     this.captures = [];
      // só para testes
     this.newDenuncia = {
@@ -60,6 +62,11 @@ export class DenouceComponent implements OnInit {
     this.positionCity();
     this.setDenuncias();
     this.display();
+  }
+
+
+  save(): void {
+    this.rota.navigate(['/minhas-denuncias']);
   }
 
   private positionCity(): void {
