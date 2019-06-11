@@ -1,3 +1,132 @@
-<p>
-  denouce works!
-</p>
+<div class="container">
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
+    Nova Denúncia
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalScrollableTitle">Realizar denúncia</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-group">
+                    <label for="selectX"><strong>Categoria:</strong></label>
+                    <select class="form-control" id="selectX">
+                      <option *ngFor='let item of categories'>
+                        {{item.name}}
+                      </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="txtArea"><strong>Descrição da denúncia:</strong></label>
+                    <textarea class="form-control" id="txtArea" rows="3"></textarea>
+                </div>
+                <button type="button" class="btn btn-primary" (click)='showPosition()'>Adicionar localização</button>
+                <ul *ngIf='show'>
+                  <li><strong>Latitude ----:</strong> {{currentLat}}</li><br>
+                  <li><strong>Longitude --:</strong> {{currrentLng}}</li><br>
+                </ul>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success" (click)='insert(currentLat, currrentLng)'>Denunciar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div *ngIf='showMap'>
+        <agm-map [latitude]='lat' [longitude]='lng' [zoom]='zoom'>
+          <agm-marker *ngFor='let item of myDenuncias'
+          [latitude]='item.localizacao.latitude'
+          [longitude]='item.localizacao.longitude'
+          [markerDraggable]='false'
+          [title]='item.categoria'>
+              <agm-info-window [disableAutoPan]="true">
+                  <p><strong>Categoria:</strong> {{item.categoria}}</p>
+                  <p><strong>Descrição:</strong> {{item.descricao}}</p>
+              </agm-info-window>
+          </agm-marker>
+      </agm-map>
+    </div>
+    </div>
+
+
+
+<!--
+
+<h1>Integração com Google Maps</h1>
+
+<div>
+  <agm-map [latitude]='lat' [longitude]='lng' [zoom]='zoom'>
+    <agm-marker *ngFor='let item of myDenuncias'
+    [latitude]='item.localizacao.latitude'
+    [longitude]='item.localizacao.longitude'
+    [markerDraggable]='false'
+    [title]='item.categoria'>
+        <agm-info-window [disableAutoPan]="true">
+            <p><strong>Categoria:</strong> {{item.categoria}}</p>
+            <p><strong>Descrição:</strong> {{item.descricao}}</p>
+        </agm-info-window>
+    </agm-marker>
+</agm-map>
+</div>
+
+<button style='background-color: #274c9b; color: white'
+(click)='showPosition()'>Posição atual</button>
+
+
+<div style="text-align:center">
+    <div>
+      <p>{{seconds}}</p>
+      <webcam [trigger]='triggerObservable' (imageCapture)='handleImage($event)'></webcam>
+      // <webcam [trigger]="triggerObservable" (imageCapture)="handleImage($event)"></webcam> //
+      <br/>
+      <button id="snapshotBtn" (click)="triggerSnapshot();">Take A Snapshot</button>
+    </div>
+  </div>
+  <div class="snapshot" *ngIf="webcamImage">
+    <h2>Nice one!</h2>
+    <img [src]="webcamImage.imageAsDataUrl"/>
+  </div>
+
+   <h3>Realizar uma denúncia:</h3>
+
+    <div class="row centralizador">
+        <form>
+            <div class="form-group">
+                <label for="selectX"><strong>Categoria:</strong></label>
+                <select class="form-control" id="selectX">
+                  <option *ngFor='let item of categories'>
+                    {{item.name}}
+                  </option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="txtArea"><strong>Descrição da denúncia:</strong></label>
+                <textarea class="form-control" id="txtArea" rows="3"></textarea>
+            </div>
+            <button type="button" class="btn btn-primary" (click)='showPosition()'>Denunciar</button>
+        </form>
+    </div>
+
+    <div class="row centralizador">
+        <div *ngIf='show'>
+            <p>latitude: {{currentLat}}</p>
+            <p>longitude: {{currrentLng}}</p>
+            <button type="button" class="btn btn-primary" (click)='insert(currentLat, currrentLng)'>Denunciar</button>
+          </div>
+    </div>
+
+-->
+<br><br><br>

@@ -1,0 +1,22 @@
+#geocalizar {
+  position: absolute;
+  z-index: 2;
+  top: 5px;
+  right: 5px;
+  font-size: 13px;
+  background-color: #3071a9;
+  color: #fff;
+  border: 1px solid #285e8e;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+agm-map {
+  height: 500px;
+}
+
+#app { text-align: center; color: #2c3e50; margin-top: 60px; }
+#video { background-color: #000000; }
+#canvas { display: none; } li { display: inline; padding: 5px; }
+
+ul {padding: 2px;}
