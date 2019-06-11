@@ -31,11 +31,19 @@
   padding: 20px;
 }
 
-.my-spcace {
+.my-s {
+  padding-left: 50px;
+  padding-right: 20px;
   margin: 2px;
 }
 
 .my-btn {
   background-color: #2e9283;
   color:white;
+}
+
+/**/
+body{
+  font-family: 'Signika', sans-serif;
+  font-size:21px;
 }
