@@ -1,7 +1,6 @@
 {
   "name": "social-power",
   "version": "0.0.0",
-  "node": "12.2.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,6 +9,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "engines": {
+    "node": "12.2.0"
+    },
   "private": true,
   "dependencies": {
     "@agm/core": "^1.0.0-beta.6",
