@@ -8,3 +8,7 @@ a {
 }
 
 .my-space {padding: 10px;}
+
+.nav {
+  position: fixed;
+}
