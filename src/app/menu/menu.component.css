@@ -93,7 +93,7 @@
   -ms-transition: all 1s ease;
   transition: all 1s ease;
 }
-@media (max-width: 767px) {
+@media (max-width: 1418px) {
   .nav-side-menu {
     position: relative;
     width: 100%;
@@ -107,8 +107,8 @@
     top: 10px;
     z-index: 10 !important;
     padding: 3px;
-    background-color: #ffffff;
-    color: #000;
+    background-color: #23282e;
+    color: #ccc;
     width: 40px;
     text-align: center;
   }
