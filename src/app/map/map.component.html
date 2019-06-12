@@ -20,21 +20,4 @@
       </div>
   </div>
 
-  <div class="row">
-      <div style="text-align:center">
-          <div>
-            <p>{{seconds}}</p>
-            <webcam [trigger]='triggerObservable' (imageCapture)='handleImage($event)'></webcam>
-            <!--<webcam [trigger]="triggerObservable" (imageCapture)="handleImage($event)"></webcam>-->
-            <br/>
-            <button id="snapshotBtn" (click)="triggerSnapshot();">Tirar foto</button>
-          </div>
-        </div>
-        <div class="snapshot" *ngIf="webcamImage">
-          <h2>Sucesso!</h2>
-          <img [src]="webcamImage.imageAsDataUrl"/>
-      </div>
-  </div>
-
 </div>
-<br><br><br>

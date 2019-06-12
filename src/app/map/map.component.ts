@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { WebcamImage } from 'ngx-webcam';
+import { Component, OnInit } from '@angular/core';
 
 import { Localization } from '../shared/localization.model';
 import { DenunciaService } from '../denuncia.service';
@@ -13,13 +12,6 @@ import { Subject } from 'rxjs';
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements OnInit {
-
-    // capturar imagem
-    @ViewChild("video") public video: ElementRef;
-    @ViewChild("canvas") public canvas: ElementRef;
-    seconds: number;
-    trigger: Subject<void> = new Subject<void>();
-    webcamImage: WebcamImage = null;
     // localização inicial do mapa
     latitude = -6.7827932;
     longitude = -43.0266088;
@@ -47,27 +39,4 @@ export class MapComponent implements OnInit {
     }
   }
 
-  // capture image
-  public triggerSnapshot(): void {
-    this.seconds = 3;
-    setTimeout(() => {
-      this.seconds = 2;
-     setTimeout(() => {
-       this.seconds = 1
-       setTimeout(() => {
-         this.trigger.next();
-         this.seconds = null;
-       },1000)
-     },1000)
-    },1000)
-  }
-
-  public handleImage(webcamImage: WebcamImage): void {
-    console.info("received webcam image", webcamImage);
-    this.webcamImage = webcamImage;
-  }
-
-  public get triggerObservable(): Observable<void> {
-    return this.trigger.asObservable();
-  }
 }
