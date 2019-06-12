@@ -2,32 +2,38 @@
   <app-menu></app-menu>
 </div>
 <div class='container'>
-  <div class='my-box text-center'><h4>Mapa de denúncias</h4></div>
-    <agm-map [latitude]='latitude' [longitude]='longitude' [zoom]='zoom'>
-        <agm-marker *ngFor='let denuncia of denuncias'
-        [latitude]='denuncia.localizacao.latitude'
-        [longitude]='denuncia.localizacao.longitude'
-        [markerDraggable]='false'
-        [title]='denuncia.categoria'>
-        <agm-info-window [disableAutoPan]="true">
-          <p><strong>Denúncia:</strong> {{denuncia.descricao}}</p>
-          <img [src]='denuncia.imagem'>
-        </agm-info-window>
-      </agm-marker>
-    </agm-map>
-
-  <div style="text-align:center">
-      <div>
-        <p>{{seconds}}</p>
-        <webcam [trigger]='triggerObservable' (imageCapture)='handleImage($event)'></webcam>
-        <!--<webcam [trigger]="triggerObservable" (imageCapture)="handleImage($event)"></webcam>-->
-        <br/>
-        <button id="snapshotBtn" (click)="triggerSnapshot();">Tirar foto</button>
+  <div class='row'>
+      <div class="my-map">
+          <div class='my-box text-center'><h4>Mapa de denúncias</h4></div>
+          <agm-map [latitude]='latitude' [longitude]='longitude' [zoom]='zoom'>
+              <agm-marker *ngFor='let denuncia of denuncias'
+              [latitude]='denuncia.localizacao.latitude'
+              [longitude]='denuncia.localizacao.longitude'
+              [markerDraggable]='false'
+              [title]='denuncia.categoria'>
+              <agm-info-window [disableAutoPan]="true">
+                <p><strong>Denúncia:</strong> {{denuncia.descricao}}</p>
+                <img [src]='denuncia.imagem'>
+              </agm-info-window>
+            </agm-marker>
+          </agm-map>
       </div>
-    </div>
-    <div class="snapshot" *ngIf="webcamImage">
-      <h2>Sucesso!</h2>
-      <img [src]="webcamImage.imageAsDataUrl"/>
+  </div>
+
+  <div class="row">
+      <div style="text-align:center">
+          <div>
+            <p>{{seconds}}</p>
+            <webcam [trigger]='triggerObservable' (imageCapture)='handleImage($event)'></webcam>
+            <!--<webcam [trigger]="triggerObservable" (imageCapture)="handleImage($event)"></webcam>-->
+            <br/>
+            <button id="snapshotBtn" (click)="triggerSnapshot();">Tirar foto</button>
+          </div>
+        </div>
+        <div class="snapshot" *ngIf="webcamImage">
+          <h2>Sucesso!</h2>
+          <img [src]="webcamImage.imageAsDataUrl"/>
+      </div>
   </div>
 
 </div>

@@ -10,3 +10,8 @@ agm-map {
   margin-top: 10px;
   border-radius: 5px;
 }
+
+.my-map {
+  margin: 0 auto;
+  width: 900px;
+}
