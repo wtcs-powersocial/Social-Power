@@ -42,6 +42,10 @@
   color:white;
 }
 
+.my-top {
+  margin-top: 1px;
+}
+
 /**/
 body{
   font-family: 'Signika', sans-serif;
@@ -68,8 +72,6 @@ body{
   clear: both;
 }
 
-
-
 .card-wrap {
   float:left;
   width:100%;
@@ -85,6 +87,13 @@ body{
   .card-wrap {
     width:60%;
     padding-left: 200px;
+  }
+  .my-top {
+    margin-top: 50px;
+  }
+
+  .margem {
+    margin-bottom: 200px;
   }
 }
 
@@ -108,8 +117,4 @@ body{
 .margem {
   margin-top: 50px;
 }
-}
-
-.mar-bottom {
-  margin-bottom: 100px;
 }
