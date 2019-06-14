@@ -1,0 +1,273 @@
+{
+	"denuncias": [
+		{
+      "categoria": "Água",
+      "descricao": "Cano quebrado. Vazamento de água se estende por mais de 500 metros",
+      "imagem": "../../assets/agua.jpg",
+      "id": 1,
+      "autor":
+        {
+          "name": "Romário Coelho Oliveira",
+          "idUser": 1,
+          "email": "rco@email.com",
+          "password": 123456,
+          "uf": "PI",
+          "city": "Floriano",
+          "icon": ""
+        },
+      "localizacao":
+        {
+          "latitude": -6.767560,
+          "longitude": -43.029453
+        },
+      "status": true
+
+    },
+
+    {
+      "categoria": "Coleta de lixo",
+      "descricao": "O caminhão do lixo não passa nessa rua a duas semanas. Absurdo!",
+      "imagem": "../../assets/lixo.jpg",
+      "id": 2,
+      "autor":
+        {
+          "name": "Brenda Rainara Pereira da Silva",
+          "idUser": 2,
+          "email": "brps@email.com",
+          "password": 123456,
+          "uf": "PI",
+          "city": "Floriano",
+          "icon": ""
+        },
+      "localizacao":
+        {
+          "latitude": -6.787692,
+          "longitude": -43.037305
+        },
+      "status": true
+
+    },
+
+    {
+      "categoria": "Iluminação pública",
+      "descricao": "Sem iluminação pública neste bairro.",
+      "imagem": "../../assets/energia.jpg",
+      "id": 3,
+      "autor":
+        {
+          "name": "Halisson Costa",
+          "idUser": 3,
+          "email": "hc@email.com",
+          "password": 123456,
+          "uf": "PI",
+          "city": "Floriano",
+          "icon": ""
+        },
+      "localizacao":
+        {
+          "latitude": -6.766304,
+          "longitude": -43.023506
+        },
+      "status": true
+
+    },
+
+    {
+      "categoria": "Água",
+      "descricao": "Faltou água no meu bairro.",
+      "imagem": "../../assets/agua.jpg",
+      "id": 4,
+      "autor":
+        {
+          "name": "Brenda Rainara Pereira da Silva",
+          "idUser": 2,
+          "email": "brps@email.com",
+          "password": 123456,
+          "uf": "PI",
+          "city": "Floriano",
+          "icon": ""
+        },
+      "localizacao":
+        {
+          "latitude": -6.768945,
+          "longitude": -43.030204
+        },
+      "status": true
+
+    },
+
+    {
+      "categoria": "Coleta de lixo",
+      "descricao": "Sem coleta de lixo a mais de 05 dias.",
+      "imagem": "../../assets/lixo.jpg",
+      "id": 5,
+      "autor":
+        {
+          "name": "Romário Coelho Oliveira",
+          "idUser": 1,
+          "email": "rco@email.com",
+          "password": 123456,
+          "uf": "PI",
+          "city": "Floriano",
+          "icon": ""
+        },
+      "localizacao":
+        {
+          "latitude": -6.768501,
+          "longitude": -43.012615
+        },
+      "status": true
+
+    },
+
+
+    {
+      "categoria": "Água",
+      "descricao": "Sem distribuição de água potável.",
+      "imagem": "../../assets/agua.jpg",
+      "id": 6,
+      "autor":
+        {
+          "name": "Halisson Costa",
+          "idUser": 3,
+          "email": "hc@email.com",
+          "password": 123456,
+          "uf": "PI",
+          "city": "Floriano",
+          "icon": ""
+        },
+      "localizacao":
+        {
+          "latitude": -6.775639,
+          "longitude":  -43.010491
+        },
+      "status": true
+
+    },
+
+
+    {
+      "categoria": "Iluminação pública",
+      "descricao": "Poste derrubado a mais de uma semana.",
+      "imagem": "../../assets/energia.jpg",
+      "id": 7,
+      "autor":
+        {
+          "name": "Brenda Rainara Pereira da Silva",
+          "idUser": 2,
+          "email": "brps@email.com",
+          "password": 123456,
+          "uf": "PI",
+          "city": "Floriano",
+          "icon": ""
+        }
+      ,
+      "localizacao":
+        {
+          "latitude": -6.776704,
+          "longitude": -43.021218
+        },
+      "status": true
+
+    },
+
+    {
+      "categoria": "Coleta de lixo",
+      "descricao": "Sem coleta de lixo desde a última semana",
+      "imagem": "../../assets/lixo.jpg",
+      "id": 8,
+      "autor":
+        {
+          "name": "Romário Coelho Oliveira",
+          "idUser": 1,
+          "email": "rco@email.com",
+          "uf": "PI",
+          "city": "Floriano",
+          "icon": ""
+        },
+      "localizacao":
+        {
+          "lat": -6.773891,
+          "long": -43.031679
+        },
+      "status": true
+
+    },
+
+    {
+      "categoria": "Água",
+      "descricao": "Minha casa encontra-se sem abastecimento de água.",
+      "imagem": "../../assets/agua.jpg",
+      "id": 9,
+      "autor":
+        {
+          "name": "Halisson Costa",
+          "idUser": 3,
+          "email": "hc@email.com",
+          "password": 123456,
+          "uf": "PI",
+          "city": "Floriano",
+          "icon": ""
+        },
+      "localizacao":
+        {
+          "latitude": -6.784805,
+          "longitude": -43.041307
+        },
+      "status": true
+    }
+  ],
+
+  "categories": [
+    {
+      "id": 1,
+      "title": "Água"
+    },
+    {
+      "id": 2,
+      "title": "Coleta de lixo"
+    },
+    {
+      "id": 1,
+      "title": "Iluminação"
+    },
+    {
+      "id": 1,
+      "title": "Limpeza"
+    },
+    {
+      "id": 1,
+      "title": "Saneamento"
+    }
+  ],
+
+  "users": [
+    {
+      "name": "Romário Coelho Oliveira",
+      "idUser": 1,
+      "email": "rco@email.com",
+      "password": 123456,
+      "uf": "PI",
+      "city": "Floriano",
+      "icon": ""
+    },
+    {
+      "name": "Brenda Rainara Pereira da Silva",
+      "idUser": 1,
+      "email": "rco@email.com",
+      "password": 123456,
+      "uf": "PI",
+      "city": "Floriano",
+      "icon": ""
+    },
+    {
+      "name": "Halisson Costa",
+      "idUser": 1,
+      "email": "hc@email.com",
+      "password": 123456,
+      "uf": "PI",
+      "city": "Floriano",
+      "icon": ""
+    }
+  ]
+}
