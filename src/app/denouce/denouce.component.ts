@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, NgZone } from '@angular/core';
 import {HttpClient} from '@angular/common/http'; // navigate
 import { Subject} from "rxjs";
-import { Observable} from "rxjs/observable";
+import { Observable} from "rxjs/Observable";
 import {WebcamImage} from 'ngx-webcam';
 
 import { DenunciaModel } from './../shared/denuncia.model';

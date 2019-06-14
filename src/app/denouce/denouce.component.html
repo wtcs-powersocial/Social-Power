@@ -1,42 +1,45 @@
-<app-menu></app-menu>
+<div class='my-top'>
+  <app-menu></app-menu>
 
-<div class="container border">
-    <div class="row">
-        <div class="col-md-6 form-modal centralizador">
-            <!-- <img [src]='image' class='my-img center'> -->
-            <h4 class='my-title text-center'>Nova Denúncia</h4>
-            <form>
-                <div class="form-group">
-                    <label for="selectX" class='my-p'><strong>* Categoria:</strong></label>
-                    <select class="form-control" id="selectX">
-                      <option *ngFor='let item of categories'>
-                        {{item.name}}
-                      </option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="txtArea" class='my-p'><strong>* Descrição da denúncia:</strong></label>
-                    <textarea class="form-control" id="txtArea" rows="3" required></textarea>
-                </div>
-                <button type="button" class="btn btn-secondary my-s" (click)='showPosition()'>
-                    <i class="fa fa-map-marker fa-2x"></i>
-                </button>
-                <button type='button' class='btn btn-secondary my-space'>
-                    <i class="fa fa-camera fa-2x"></i>
-                </button>
+  <div class="container border">
+      <div class="row">
+          <div class="col-md-6 form-modal centralizador">
+              <!-- <img [src]='image' class='my-img center'> -->
+              <h4 class='my-title text-center'>Nova Denúncia</h4>
+              <form>
+                  <div class="form-group">
+                      <label for="selectX" class='my-p'><strong>* Categoria:</strong></label>
+                      <select class="form-control" id="selectX">
+                        <option *ngFor='let item of categories'>
+                          {{item.title}}
+                        </option>
+                      </select>
+                  </div>
+                  <div class="form-group">
+                      <label for="txtArea" class='my-p'><strong>* Descrição da denúncia:</strong></label>
+                      <textarea class="form-control" id="txtArea" rows="3" required></textarea>
+                  </div>
+                  <button type="button" class="btn btn-secondary my-s" (click)='showPosition()'>
+                      <i class="fa fa-map-marker fa-2x"></i>
+                  </button>
+                  <button type='button' class='btn btn-secondary my-space'>
+                      <i class="fa fa-camera fa-2x"></i>
+                  </button>
 
-                <div *ngIf='show'>
-                    <ul>
-                        <li><strong class='my-p'>Latitude ----:</strong> {{currentLat}}</li><br>
-                        <li><strong class='my-p'>Longitude --:</strong> {{currrentLng}}</li><br>
-                    </ul>
-                    <button class='btn my-btn my-s' (click)='save()'>
-                        <i class="fa fa-save fa-2x"></i>
-                    </button>
-                    <button class='btn btn-danger my-s' >
-                        <i class="fa fa-times-circle fa-2x"></i>
-                    </button>
-                </div>
-            </form>
-        </div>
+                  <div *ngIf='show'>
+                      <ul>
+                          <li><strong class='my-p'>Latitude ----:</strong> {{currentLat}}</li><br>
+                          <li><strong class='my-p'>Longitude --:</strong> {{currrentLng}}</li><br>
+                      </ul>
+                      <button class='btn my-btn my-s' (click)='save()'>
+                          <i class="fa fa-save fa-2x"></i>
+                      </button>
+                      <button class='btn btn-danger my-s' >
+                          <i class="fa fa-times-circle fa-2x"></i>
+                      </button>
+                  </div>
+              </form>
+          </div>
+  </div>
+
 </div>
