@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Localization } from '../shared/localization.model';
 import { DenunciaService } from '../denuncia.service';
 import { DenunciaModel } from '../shared/denuncia.model';
-import { Observable} from "rxjs/observable";
+import { Observable} from "rxjs/Observable";
 import { Subject } from 'rxjs';
 
 @Component({
@@ -28,6 +28,8 @@ export class MapComponent implements OnInit {
     this.service.getDenunciasAll()
     .then((response: DenunciaModel[]) => this.denuncias = response)
     .catch((response: any) => console.log(response));
+
+    console.log(this.denuncias);
   }
 
   getCurrentPositionUser(): void {

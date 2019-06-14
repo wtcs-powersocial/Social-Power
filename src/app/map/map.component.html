@@ -1,4 +1,4 @@
-<div>
+<div class='mar-botton'>
   <app-menu></app-menu>
 </div>
 <div class='container margem'>
@@ -12,7 +12,7 @@
               [markerDraggable]='false'
               [title]='denuncia.categoria'>
               <agm-info-window [disableAutoPan]="true">
-                <p><strong>Denúncia:</strong> {{denuncia.descricao}}</p>
+                <p><strong>{{denuncia.descricao}}</strong></p>
                 <img [src]='denuncia.imagem'>
               </agm-info-window>
             </agm-marker>
