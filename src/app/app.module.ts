@@ -37,7 +37,7 @@ import { MenuComponent } from './menu/menu.component';
     AppRoutingModule,
     HttpClientModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDHW2OC0FXfUD-BiEGOwHBM8VaNDizzXk0',
+      apiKey: 'AIzaSyAOJ2XdMlZGFwq3G-U3pJdA_v8Rui49YA8',
       libraries: ['places']
     }),
     WebcamModule,
