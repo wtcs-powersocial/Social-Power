@@ -1,23 +1,21 @@
 <div class='mar-botton'>
-  <app-menu></app-menu>
+    <app-menu></app-menu>
 </div>
 <div class='container margem'>
-  <div class='row'>
-      <div class="my-map">
-          <div class='my-box text-center'><h4>Mapa de denúncias</h4></div>
-          <agm-map [latitude]='latitude' [longitude]='longitude' [zoom]='zoom'>
-              <agm-marker *ngFor='let denuncia of denuncias'
-              [latitude]='denuncia.localizacao.latitude'
-              [longitude]='denuncia.localizacao.longitude'
-              [markerDraggable]='false'
-              [title]='denuncia.categoria'>
-              <agm-info-window [disableAutoPan]="true">
-                <p><strong>{{denuncia.descricao}}</strong></p>
-                <img [src]='denuncia.imagem'>
-              </agm-info-window>
-            </agm-marker>
-          </agm-map>
-      </div>
-  </div>
+    <div class='row'>
+        <div class="my-map">
+            <div class='my-box text-center'>
+                <h4>Mapa de denúncias</h4>
+            </div>
+            <agm-map [latitude]='latitude' [longitude]='longitude' [zoom]='zoom'>
+                <agm-marker *ngFor='let denuncia of denuncias' [latitude]='denuncia.local.latitude' [longitude]='denuncia.local.longitude' [markerDraggable]='false' [title]='denuncia.categoria'>
+                    <agm-info-window [disableAutoPan]="true">
+                        <p><strong>{{denuncia.descricao}}</strong></p>
+                        <img [src]='denuncia.imgDenuncia'>
+                    </agm-info-window>
+                </agm-marker>
+            </agm-map>
+        </div>
+    </div>
 
 </div>

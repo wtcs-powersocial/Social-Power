@@ -39,25 +39,8 @@ export class DenouceComponent implements OnInit {
   constructor(private service: DenunciaService, private rota: Router) {
     this.captures = [];
      // só para testes
-    this.newDenuncia = {
-      categoria: 'Energia',
-      descricao: 'sahfs rooyo ngfjnj jsdfsdf rejterjt dnfbns wefy rgnrj',
-      imagem: null,
-      id: 4,
-      autor: {
-        "name": "Romario Coelho Oliveira",
-        "idUser": 1,
-        "email": "rco@email.com",
-        "password": "123456",
-        "uf": "PI",
-        "city": "Floriano",
-        "icon": null
-      },
-      localizacao: {latitude: null, longitude: null},
-      status: true
-    };
+    // this.newDenuncia =
   }
-
   ngOnInit() {
     this.positionCity();
     this.setDenuncias();
@@ -114,8 +97,8 @@ export class DenouceComponent implements OnInit {
 
   // insert de teste, no modo de produção receberá um objeto denuncia.
   insert(lat: number, lon: number): void {
-    this.newDenuncia.localizacao.longitude = lat;
-    this.newDenuncia.localizacao.longitude = lon;
+    this.newDenuncia.local.longitude = lat;
+    this.newDenuncia.local.longitude = lon;
     this.myDenuncias.push(this.newDenuncia);
     this.alterShowMap();
   }

@@ -13,6 +13,7 @@ export class LoginService {
 
   constructor(private serviceHttp: HttpClient) {
     this.getAll().then((r: UserModel[]) => this.myUsers = r ).catch((r: any) => console.log(r));
+    console.log(this.myUsers);
    }
 
   public getAll(): Promise<UserModel[]> {

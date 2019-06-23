@@ -19,7 +19,7 @@ export class DenunciaService {
 
    // consume a nossa API fake para retornar todas as ofertas
    public getDenunciasAll(): Promise<DenunciaModel[]> {
-    return this.httpService.get(`${urlApi}/denuncias?status=true`)
+    return this.httpService.get(`${urlApi}/denuncias`)
     .toPromise()
     .then((response: any) => {
       console.log(response);

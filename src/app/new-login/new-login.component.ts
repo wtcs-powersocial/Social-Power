@@ -28,6 +28,7 @@ export class NewLoginComponent implements OnInit {
   }
 
   public addUser(name: string, password: string, email: string, uf: string, city: string): void {
+    /*
     this.newUser.name = name;
     this.newUser.email = email;
     this.newUser.password = password;
@@ -35,6 +36,7 @@ export class NewLoginComponent implements OnInit {
     this.newUser.uf = uf;
 
     this.insert(this.newUser);
+    */
   }
 
 }
