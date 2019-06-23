@@ -1,9 +1,10 @@
 export class UserModel {
-  name: string;
   idUser: number;
+  nameComplete: string;
   email: string;
+  cpf: string;
+  dataNasc: string;
   password: string;
-  uf: string;
-  city: string;
-  icon: string;
+  nomeUser: string;
+  icon: Object;
 }
