@@ -11,32 +11,28 @@ import { UserModel } from '../shared/user.model';
 })
 export class NewLoginComponent implements OnInit {
 
-  public newUser: UserModel;
-
-  constructor(private service: LoginService) { }
+  constructor(private service: LoginService) {
+  }
 
   ngOnInit() {
   }
 
-  private insert(user: UserModel): void {
-    this.service.insert(user);
-    alert('Inserido com sucesso --> ' + this.service.getAll());
+  public myInsert(): void {
+    // this.service.insert(this.newUser).subscribe();
   }
 
-  public alerta(): void {
-    alert('Funciona');
-  }
+  public addUser(nameCompleto: string, emailUser: string, nameUser: string, pswUser: string, cpf: string, dataNasc: string): void {
+    // nameCompleto.value, emailUser.value, nameUser.value, pswUser.value, emailUser.value, cpf.value, dataNasc.values
+    dataNasc = '01/11/1998';
+    let newUser = new UserModel(nameCompleto, emailUser, nameUser, pswUser, cpf, dataNasc);
+    alert(newUser);
+    console.log(nameCompleto);
+    try{
+    this.service.insert(newUser).subscribe();
+    } catch (error) {
+      alert(error);
+    }
 
-  public addUser(name: string, password: string, email: string, uf: string, city: string): void {
-    /*
-    this.newUser.name = name;
-    this.newUser.email = email;
-    this.newUser.password = password;
-    this.newUser.city = city;
-    this.newUser.uf = uf;
-
-    this.insert(this.newUser);
-    */
   }
 
 }
