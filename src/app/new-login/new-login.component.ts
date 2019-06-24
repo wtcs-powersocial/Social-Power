@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { LoginService } from '../login/login.service';
 import { UserModel } from '../shared/user.model';
+import { Observable, Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-login',
@@ -9,12 +11,18 @@ import { UserModel } from '../shared/user.model';
   styleUrls: ['./new-login.component.css'],
   providers: [LoginService]
 })
-export class NewLoginComponent implements OnInit {
+export class NewLoginComponent implements OnInit, OnDestroy {
 
-  constructor(private service: LoginService) {
+  inscrito: Subscription;
+
+  constructor(private service: LoginService, private roteador: Router) {
   }
 
   ngOnInit() {
+  }
+
+  ngOnDestroy(){
+    this.inscrito.unsubscribe();
   }
 
   public myInsert(): void {
@@ -27,8 +35,9 @@ export class NewLoginComponent implements OnInit {
     let newUser = new UserModel(nameCompleto, emailUser, nameUser, pswUser, cpf, dataNasc);
     alert(newUser);
     console.log(nameCompleto);
-    try{
-    this.service.insert(newUser).subscribe();
+    try {
+    this.inscrito = this.service.insert(newUser).subscribe();
+    this.roteador.navigate(['']);
     } catch (error) {
       alert(error);
     }
