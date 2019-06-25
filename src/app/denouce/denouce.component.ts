@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild, ElementRef, NgZone } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, NgZone, OnDestroy } from '@angular/core';
 import {HttpClient} from '@angular/common/http'; // navigate
-import { Subject} from "rxjs";
+import { Subject, Subscription} from "rxjs";
 import { Observable} from "rxjs/Observable";
 import {WebcamImage} from 'ngx-webcam';
 
@@ -8,7 +8,6 @@ import { DenunciaModel } from './../shared/denuncia.model';
 import { DenunciaService } from '../denuncia.service';
 import { CategoryModel } from '../shared/category.model';
 import { Router } from '@angular/router';
-import { Route } from '@angular/router';
 
 @Component({
   selector: 'app-denouce',
@@ -17,8 +16,9 @@ import { Route } from '@angular/router';
   providers: [DenunciaService]
 })
 
-export class DenouceComponent implements OnInit {
+export class DenouceComponent implements OnInit, OnDestroy {
 
+  inscricao: Subscription;
   @ViewChild("video") public video: ElementRef;
   @ViewChild("canvas") public canvas: ElementRef;
   public captures: Array<any>;
@@ -26,6 +26,8 @@ export class DenouceComponent implements OnInit {
   myDenuncias: DenunciaModel[]; // conjunto de denuncias
   newDenuncia: DenunciaModel; // denuncia atual
   categories: CategoryModel[];
+  categorySelected: string;
+  description: string; // descrição da denuncia
   showMap: boolean; // exibir mapa
   // exibir mapa da cidade de floriano
   lat: number;
@@ -45,11 +47,17 @@ export class DenouceComponent implements OnInit {
     this.positionCity();
     this.setDenuncias();
     this.display();
+    console.log('Minha categorias: ' + this.categories);
+  }
+
+  ngOnDestroy() {
+    this.inscricao.unsubscribe();
   }
 
 
-  save(): void {
-    this.rota.navigate(['/minhas-denuncias']);
+  getCategory(option: string): void {
+    this.categorySelected = option;
+    // alert(this.categorySelected);
   }
 
   private positionCity(): void {
@@ -57,7 +65,10 @@ export class DenouceComponent implements OnInit {
     this.lng = -43.0266088;
     this.zoom = 15;
     this.service.getCategories()
-    .then((r: CategoryModel[]) => this.categories = r)
+    .then((r: CategoryModel[]) => {
+      console.log(r);
+      this.categories = r;
+    })
     .catch((r: any) => console.log(r));
   }
 
@@ -96,11 +107,16 @@ export class DenouceComponent implements OnInit {
   }
 
   // insert de teste, no modo de produção receberá um objeto denuncia.
-  insert(lat: number, lon: number): void {
-    this.newDenuncia.local.longitude = lat;
-    this.newDenuncia.local.longitude = lon;
-    this.myDenuncias.push(this.newDenuncia);
-    this.alterShowMap();
+  insert(lat: number, lon: number, description: string): void {
+    let denouce = new DenunciaModel(this.categorySelected, description,
+    this.currentLat, this.currrentLng, 'sem-img', 'Testando user');
+    alert(denouce);
+    try {
+      this.service.insert(denouce).subscribe();
+      this.rota.navigate(['principal']);
+    } catch (error) {
+      alert(error);
+    }
   }
 
   // capture image

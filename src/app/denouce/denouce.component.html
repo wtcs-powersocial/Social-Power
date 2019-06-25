@@ -1,45 +1,45 @@
 <div class='my-top margem'>
-  <app-menu></app-menu>
+    <app-menu></app-menu>
 
-  <div class="container border">
-      <div class="row">
-          <div class="col-md-6 form-modal centralizador">
-              <!-- <img [src]='image' class='my-img center'> -->
-              <h4 class='my-title text-center'>Nova Denúncia</h4>
-              <form>
-                  <div class="form-group">
-                      <label for="selectX" class='my-p'><strong>* Categoria:</strong></label>
-                      <select class="form-control" id="selectX">
-                        <option *ngFor='let item of categories'>
-                          {{item.title}}
+    <div class="container border">
+        <div class="row">
+            <div class="col-md-6 form-modal centralizador">
+                <!-- <img [src]='image' class='my-img center'> -->
+                <h4 class='my-title text-center'>Nova Denúncia</h4>
+                <form>
+                    <div class="form-group">
+                        <label for="selectX" class='my-p'><strong>* Categoria:</strong></label>
+                        <select class="form-control" id="selectX">
+                        <option *ngFor='let item of categories' (click)='getCategory(item.categoria)'>
+                          {{item.categoria}}
                         </option>
                       </select>
-                  </div>
-                  <div class="form-group">
-                      <label for="txtArea" class='my-p'><strong>* Descrição da denúncia:</strong></label>
-                      <textarea class="form-control" id="txtArea" rows="3" required></textarea>
-                  </div>
-                  <button type="button" class="btn btn-secondary my-s" (click)='showPosition()'>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtArea" class='my-p'><strong>* Descrição da denúncia:</strong></label>
+                        <textarea class="form-control" id="txtArea" rows="3" required #descricao></textarea>
+                    </div>
+                    <button type="button" class="btn btn-secondary my-s" (focus)='showPosition()'>
                       <i class="fa fa-map-marker fa-2x"></i>
                   </button>
-                  <button type='button' class='btn btn-secondary my-space'>
+                    <button type='button' class='btn btn-secondary my-space'>
                       <i class="fa fa-camera fa-2x"></i>
                   </button>
 
-                  <div *ngIf='show'>
-                      <ul>
-                          <li><strong class='my-p'>Latitude ----:</strong> {{currentLat}}</li><br>
-                          <li><strong class='my-p'>Longitude --:</strong> {{currrentLng}}</li><br>
-                      </ul>
-                      <button class='btn my-btn my-s' (click)='save()'>
+                    <div *ngIf='show'>
+                        <ul>
+                            <li><strong class='my-p'>Latitude ----:</strong> {{currentLat}}</li><br>
+                            <li><strong class='my-p'>Longitude --:</strong> {{currrentLng}}</li><br>
+                        </ul>
+                        <button class='btn my-btn my-s' (click)='insert(currentLat, currrentLng, descricao.value)'>
                           <i class="fa fa-save fa-2x"></i>
                       </button>
-                      <button class='btn btn-danger my-s' >
+                        <button class='btn btn-danger my-s'>
                           <i class="fa fa-times-circle fa-2x"></i>
                       </button>
-                  </div>
-              </form>
-          </div>
-  </div>
+                    </div>
+                </form>
+            </div>
+        </div>
 
-</div>
+    </div>
