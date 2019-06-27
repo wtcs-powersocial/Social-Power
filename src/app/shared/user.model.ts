@@ -10,17 +10,19 @@ export class UserModel {
 
   constructor(
     nameCompleto: string,
-      emailUser: string,
-      nameUser: string,
-      pswUser: string,
-      cpf: string,
-      dataNasc: any
-  ){
+    emailUser: string,
+    nameUser: string,
+    pswUser: string,
+    cpf: string,
+    dataNasc: any,
+    icon: any
+  ) {
     this.nameComplete = nameCompleto;
     this.email = emailUser;
     this.nameUser = nameUser;
     this.password = pswUser;
     this.cpf = cpf;
     this.dataNasc = dataNasc;
+    this.icon = icon;
   }
 }
