@@ -46,6 +46,14 @@ export class LoginService {
     return this.serviceHttp.post<UserModel>(`${urlApi}/users`, newUser, this.httpOptions);
   }
 
+  criar(user: any) {
+    return this.serviceHttp.post(`${urlApi}/users`, user);
+  }
+
+  insertForm(newUser: FormData): Observable<FormData> {
+    return this.serviceHttp.post<FormData>(`${urlApi}/users`, newUser, this.httpOptions);
+  }
+
   private init(): void {
   }
 }
