@@ -1,5 +1,5 @@
-<div class='login-page'>
-    <form class="form-style-9">
+<!--
+  <form class="form-style-9" method="post" ectype="multipart/form-data">
         <h1>Novo Cadastro</h1>
         <ul>
             <li>
@@ -15,10 +15,66 @@
                 <input type="text" class="field-style field-split align-left" placeholder="CPF" #cpf id="cpf" name="cpf" />
                 <input type="date" class="field-style field-split align-right" placeholder="Data Nascimento" #dataNasc id="dataNasc" name="dataNasc" />
             </li>
+            <li><input name='icon' id='icon' type="file" (change)='uploadImage($event);' accept="image/*"></li>
             <li>
-                <input type="submit" value="Criar Conta" style='width: 100%' (click)="addUser(nameCompleto.value, emailUser.value, nameUser.value, pswUser.value, emailUser.value, cpf.value, dataNasc.value)" />
+                <input type="submit" value="Criar Conta" style='width: 100%' (click)="addUser(nameCompleto.value, emailUser.value, nameUser.value, pswUser.value, cpf.value, dataNasc.value)" />
             </li>
         </ul>
     </form>
 
+-->
+
+<div class='login-page'>
+    <section>
+        <div class="container">
+            <form method="post" #frm="ngForm" (ngSubmit)="criar(frm.value);" ectype="multipart/form-data">
+                <ul>
+                    <li>
+                        <div class="form-group">
+                            <input type="text" id="nameComplete" name="nameComplete" class="form-control field-style field-split align-left" placeholder="Nome completo" [(ngModel)]="usuario.nameComplete" required/>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" class="form-control field-style field-split align-right" placeholder="E-mail" [(ngModel)]="usuario.email" required email/>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="form-group">
+                            <input type="text" id="cpf" name="cpf" class="form-control field-style field-split align-left" placeholder="CPF" [(ngModel)]="usuario.cpf" required/>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="form-group">
+                            <input type="password" id="password" name="password" class="form-control field-style field-split align-right" placeholder="Senha" [(ngModel)]="usuario.password" required/>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="form-group">
+                            <input type="text" id="nameUser" name="nameUser" class="form-control field-style field-split align-lef" placeholder="Nome de usuário" [(ngModel)]="usuario.nameUser" required/>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="form-group">
+                            <input type="date" id="dataNasc" name="dataNasc" class="form-control field-style field-split align-right" placeholder="Data de nascimento" [(ngModel)]="usuario.dataNasc" required/>
+                        </div>
+                    </li>
+
+                    <li>
+                        <input type="file" id="icon" name='icon' style='width: 50%' (change)='uploadImage($event);' />
+                    </li>
+
+                    <li>
+                        <button type="submit" class="btn btn-primary" [disabled]="frm.invalid">Cadastrar</button>
+                    </li>
+                </ul>
+
+            </form>
+        </div>
+    </section>
 </div>
