@@ -27,6 +27,7 @@ export class DenouceComponent implements OnInit, OnDestroy {
   newDenuncia: DenunciaModel; // denuncia atual
   categories: CategoryModel[];
   categorySelected: string;
+  foto: FormData;
   description: string; // descrição da denuncia
   showMap: boolean; // exibir mapa
   // exibir mapa da cidade de floriano
@@ -38,7 +39,7 @@ export class DenouceComponent implements OnInit, OnDestroy {
   currrentLng: number;
   // exibir esses dados em uma outra div?
   show: boolean;
-  constructor(private service: DenunciaService, private rota: Router) {
+  constructor(private service: DenunciaService, private rota: Router, private http: HttpClient) {
     this.captures = [];
      // só para testes
     // this.newDenuncia =
@@ -109,13 +110,22 @@ export class DenouceComponent implements OnInit, OnDestroy {
   // insert de teste, no modo de produção receberá um objeto denuncia.
   insert(lat: number, lon: number, description: string): void {
     let denouce = new DenunciaModel(this.categorySelected, description,
-    this.currentLat, this.currrentLng, 'sem-img', 'Testando user');
-    alert(denouce);
+    this.currentLat, this.currrentLng, this.webcamImage.imageAsDataUrl, 'Testando user');
     try {
       this.service.insert(denouce).subscribe();
-      this.rota.navigate(['principal']);
     } catch (error) {
       alert(error);
+    } finally {
+      this.rota.navigate(['principal']);
+    }
+  }
+
+  uploadImage(event) {
+    if (event.target.files && event.target.files[0]) {
+      const img = event.target.files[0];
+      this.foto.append('arquivo', img);
+
+      // this.http.post('')
     }
   }
 

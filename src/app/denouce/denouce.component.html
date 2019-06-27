@@ -22,11 +22,21 @@
                     <button type="button" class="btn btn-secondary my-s" (focus)='showPosition()'>
                       <i class="fa fa-map-marker fa-2x"></i>
                   </button>
-                    <button type='button' class='btn btn-secondary my-space'>
-                      <i class="fa fa-camera fa-2x"></i>
+                    <button type='button' class='btn btn-secondary my-space' id="snapshotBtn" (click)="triggerSnapshot();">
+                    <i class="fa fa-camera fa-2x"></i>
                   </button>
 
-                    <div *ngIf='show'>
+                    <div class="card border shadow-sm">
+                        <div class="center">
+                            <webcam [height]="500" [width]="300" class='img-fluid' [trigger]="triggerObservable" (imageCapture)="handleImage($event)"></webcam>
+                        </div>
+                        <div class="card-img" *ngIf="webcamImage">
+                            <h2>Foto registrada</h2>
+                            <img class="img-fluid" [src]="webcamImage.imageAsDataUrl" />
+                        </div>
+                    </div>
+
+                    <div>
                         <ul>
                             <li><strong class='my-p'>Latitude ----:</strong> {{currentLat}}</li><br>
                             <li><strong class='my-p'>Longitude --:</strong> {{currrentLng}}</li><br>
@@ -38,6 +48,7 @@
                           <i class="fa fa-times-circle fa-2x"></i>
                       </button>
                     </div>
+
                 </form>
             </div>
         </div>
