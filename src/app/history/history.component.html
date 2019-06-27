@@ -1,30 +1,30 @@
 <div class='mar-bottom'>
-  <app-menu></app-menu>
+    <app-menu></app-menu>
 
-  <div class="container">
-      <h4 class='main-color centralizador'>Minhas denúncias</h4>
-    <div *ngFor='let denouce of myDenouces'>
-      <div class="card-grid">
-        <div class="card-wrap">
-          <div class="card border shadow-sm">
-            <p><strong class='main-color'>Você publicou:</strong></p>
-            <img [src]='denouce.imagem' class="card-img"/>
-            <div class="card-body">
-              <p class="card-title"><strong>Categoria:</strong> {{denouce.categoria}}</p>
-              <p class="card-text"><strong>Denúncia:</strong> {{denouce.descricao}}</p>
-              <div class='align-content-end'>
-                  <a href="#" class="btn btn-primary my-s">
-                      <i class="fa fa-thumbs-up fa-2x"></i>
-                  </a>
-                  <a href="#" class="btn btn-danger my-s">
-                      <i class="fa fa-thumbs-down fa-2x"></i>
-                  </a>
-              </div>
+    <div class="container">
+        <h4 class='main-color centralizador'>Minhas denúncias</h4>
+        <div *ngFor='let denouce of myDenouces'>
+            <div class="card-grid">
+                <div class="card-wrap">
+                    <div class="card border shadow-sm">
+                        <p><strong class='main-color'>Você publicou:</strong></p>
+                        <img [src]='denouce.imgDenuncia' class="card-img" />
+                        <div class="card-body">
+                            <p class="card-title"><strong>Categoria:</strong> {{denouce.categoria}}</p>
+                            <p class="card-text"><strong>Denúncia:</strong> {{denouce.descricao}}</p>
+                            <div class='align-content-end'>
+                                <a href="#" class="btn btn-primary my-s">
+                                    <i class="fa fa-thumbs-up fa-2x"></i>
+                                </a>
+                                <a href="#" class="btn btn-danger my-s">
+                                    <i class="fa fa-thumbs-down fa-2x"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 
 </div>
