@@ -5,13 +5,11 @@ export class UserModel {
   cpf: string;
   dataNasc: string;
   password: string;
-  nameUser: string;
   icon: any;
 
   constructor(
     nameCompleto: string,
     emailUser: string,
-    nameUser: string,
     pswUser: string,
     cpf: string,
     dataNasc: any,
@@ -19,7 +17,6 @@ export class UserModel {
   ) {
     this.nameComplete = nameCompleto;
     this.email = emailUser;
-    this.nameUser = nameUser;
     this.password = pswUser;
     this.cpf = cpf;
     this.dataNasc = dataNasc;

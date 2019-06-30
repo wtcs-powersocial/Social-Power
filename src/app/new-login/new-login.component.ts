@@ -12,7 +12,7 @@ import { UserModel } from '../shared/user.model';
   styleUrls: ['./new-login.component.css'],
   providers: [LoginService]
 })
-export class NewLoginComponent implements OnInit, OnDestroy {
+export class NewLoginComponent implements OnInit {
 
   inscrito: Subscription;
   img: any;
@@ -25,16 +25,12 @@ export class NewLoginComponent implements OnInit, OnDestroy {
     this.usuario = {};
   }
 
-  ngOnDestroy() {
-    this.inscrito.unsubscribe();
-  }
-
   criar(frm: FormGroup) {
     console.log(this.usuario);
-    this.service.criar(this.usuario).subscribe(resposta => {
+    this.service.insert(this.usuario).subscribe(resposta => {
       console.log(resposta);
 
-      frm.reset();
+      this.roteador.navigate(['']);
     });
   }
 
@@ -52,7 +48,7 @@ export class NewLoginComponent implements OnInit, OnDestroy {
     }
   }
 
-  public addUser(nameCompleto: string, emailUser: string, nameUser: string, pswUser: string, cpf: string, dataNasc: string): void {
+  public addUser(nameCompleto: string, emailUser: string, pswUser: string, cpf: string, dataNasc: string): void {
     // nameCompleto.value, emailUser.value, nameUser.value, pswUser.value, emailUser.value, cpf.value, dataNasc.values
     const formData = new FormData();
     dataNasc = '01/11/1998';
@@ -62,10 +58,10 @@ export class NewLoginComponent implements OnInit, OnDestroy {
     formData.append('password', pswUser);
     formData.append('cpf', cpf);
     formData.append('dataNasc', dataNasc);
-    const newUser = new UserModel(nameCompleto, emailUser, nameUser, pswUser, cpf, dataNasc, this.img);
+    const newUser = new UserModel(nameCompleto, emailUser, pswUser, cpf, dataNasc, this.img);
     console.log(newUser);
     try {
-    this.inscrito = this.service.insert(newUser).subscribe();
+    this.service.insert(newUser).subscribe();
     this.roteador.navigate(['']);
     } catch (error) {
       alert(error);

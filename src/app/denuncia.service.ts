@@ -33,7 +33,7 @@ export class DenunciaService {
   }
 
   public getDenunciasByUser(id: number): Promise<DenunciaModel[]> {
-    return this.httpService.get(`${urlApi}/denuncias?autor.idUser=${id}`).toPromise()
+    return this.httpService.get(`${urlApi}/denuncias/${id}`).toPromise()
     .then((r: any) => r)
     .catch((r: any) => r);
   }
