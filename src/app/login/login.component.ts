@@ -12,20 +12,22 @@ import { LoginService } from './login.service';
 export class LoginComponent implements OnInit {
 
   public currentUser: UserModel;
-  private status: boolean;
 
   constructor(private service: LoginService, private rota: Router) { }
 
   public image: string;
+  public userSystem: {};
 
   ngOnInit() {
     this.image = '../../assets/login.png';
-    this.status = false;
   }
 
-  public login(email: string, senha: string): void {
-    this.status = this.service.logar(email, senha);
-    this.status ? this.rota.navigate(['principal']) : alert('Acesso negado!');
+  public login(userEmail: string, userPassword: string): void {
+    const user = { email: userEmail, password: userPassword };
+    this.service.login(user).subscribe(
+      res => { this.userSystem = res; this.rota.navigate(['principal']); },
+      err => { console.log(err); alert(err.error.mensagem); }
+    );
   }
 
 }
