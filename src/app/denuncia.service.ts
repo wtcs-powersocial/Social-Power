@@ -38,13 +38,11 @@ export class DenunciaService {
     .catch((r: any) => r);
   }
 
-  public getCategories(): Promise<CategoryModel[]> {
-    return this.httpService.get(`${urlApi}/categories`).toPromise()
-    .then((r: any) => r)
-    .catch((r: any) => r);
+  public getCategories(): any {
+    return this.httpService.get<any>(`${urlApi}/categories`);
   }
 
-  public insert(newDenouce: DenunciaModel): Observable<DenunciaModel> {
-    return this.httpService.post<DenunciaModel>(`${urlApi}/denouces`, newDenouce, this.httpOptions);
+  public insert(newDenouce: FormData): any {
+    return this.httpService.post<any>(`${urlApi}/denouces`, newDenouce);
   }
 }
