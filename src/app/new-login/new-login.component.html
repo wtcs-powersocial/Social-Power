@@ -1,7 +1,7 @@
 <div class='login-page'>
     <section>
         <div>
-            <form class="form-style-9" method="post" #frm="ngForm" (ngSubmit)="addUser(frm.value);" ectype="multipart/form-data">
+            <form class="form-style-9" method="post" #frm="ngForm" (ngSubmit)="addUser();" ectype="multipart/form-data">
                 <h1>Novo Cadastro</h1>
                 <ul>
                     <li>
@@ -29,11 +29,11 @@
                     </li>
 
                     <li>
-                        <input type="file" id="icon" name='icon' style='width: 100%' (change)='uploadImage($event);' [(ngModel)]="usuario.icon" />
+                        <input type="file" id="icon" name='icon' style='width: 100%' (change)='uploadImage($event);' />
                     </li>
 
                     <li>
-                        <input type="submit" class="btn btn-primary" [disabled]="frm.invalid" value='criar conta' style='width: 100%'>
+                        <input type="submit" class="btn btn-primary" [disabled]="frm.invalid" value='criar conta' style='width: 100%' (change)="frm.resetForm()">
                     </li>
                 </ul>
 
