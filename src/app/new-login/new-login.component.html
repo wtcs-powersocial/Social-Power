@@ -1,33 +1,7 @@
-<!--
-  <form class="form-style-9" method="post" ectype="multipart/form-data">
-        <h1>Novo Cadastro</h1>
-        <ul>
-            <li>
-                <input type="text" class="field-style field-split align-left" placeholder="Nome completo" #nameCompleto id="nameComplete" name="nameComplete" />
-                <input type="email" class="field-style field-split align-right" placeholder="Email" #emailUser id="email" name="email" />
-
-            </li>
-            <li>
-                <input type="text" class="field-style field-split align-left" placeholder="Nome user" #nameUser id="nameUser" name="nameUser" />
-                <input type="password" class="field-style field-split align-right" placeholder="Senha" #pswUser id="password" name="password" />
-            </li>
-            <li>
-                <input type="text" class="field-style field-split align-left" placeholder="CPF" #cpf id="cpf" name="cpf" />
-                <input type="date" class="field-style field-split align-right" placeholder="Data Nascimento" #dataNasc id="dataNasc" name="dataNasc" />
-            </li>
-            <li><input name='icon' id='icon' type="file" (change)='uploadImage($event);' accept="image/*"></li>
-            <li>
-                <input type="submit" value="Criar Conta" style='width: 100%' (click)="addUser(nameCompleto.value, emailUser.value, nameUser.value, pswUser.value, cpf.value, dataNasc.value)" />
-            </li>
-        </ul>
-    </form>
-
--->
-
 <div class='login-page'>
     <section>
         <div>
-            <form  class="form-style-9" method="post" #frm="ngForm" (ngSubmit)="criar(frm.value);" ectype="multipart/form-data">
+            <form class="form-style-9" method="post" #frm="ngForm" (ngSubmit)="addUser(frm.value);" ectype="multipart/form-data">
                 <h1>Novo Cadastro</h1>
                 <ul>
                     <li>
@@ -55,7 +29,7 @@
                     </li>
 
                     <li>
-                        <input type="file" id="icon" name='icon' style='width: 100%' (change)='uploadImage($event);' />
+                        <input type="file" id="icon" name='icon' style='width: 100%' (change)='uploadImage($event);' [(ngModel)]="usuario.icon" />
                     </li>
 
                     <li>

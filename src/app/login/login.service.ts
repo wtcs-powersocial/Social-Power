@@ -54,6 +54,10 @@ export class LoginService {
     return this.serviceHttp.post<FormData>(`${urlApi}/users`, newUser, this.httpOptions);
   }
 
+  register(files: FormData): any {
+    return this.serviceHttp.post<any>(`${urlApi}/users`, files);
+  }
+
   private init(): void {
   }
 }
