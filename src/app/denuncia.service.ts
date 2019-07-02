@@ -8,6 +8,7 @@ import { DenunciaModel } from './shared/denuncia.model';
 import { urlApi } from './shared/app.api';
 import { CategoryModel } from './shared/category.model';
 import { UserModel } from './shared/user.model';
+import { storage } from 'firebase';
 
 @Injectable({
   providedIn: 'root',
@@ -38,5 +39,9 @@ export class DenunciaService {
 
   public insert(newDenouce: FormData): any {
     return this.httpService.post<any>(`${urlApi}/denouces`, newDenouce);
+  }
+
+  public getUrlImageFB(search: any) {
+    return storage().ref().child(search).getDownloadURL();
   }
 }
