@@ -1,4 +1,3 @@
-import { LoginService } from './login/login.service';
 import { SentinelaGuard } from './sentinela.guard';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -9,7 +8,12 @@ import { FormsModule } from '@angular/forms';
 import { AgmCoreModule } from '@agm/core';
 import {WebcamModule} from 'ngx-webcam';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
 
+
+import { LoginService } from './login/login.service';
 import { TokenInterceptorService } from './token-interceptor.service';
 
 // meus componentes
@@ -24,6 +28,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NewLoginComponent } from './new-login/new-login.component';
 import { HistoryComponent } from './history/history.component';
 import { MenuComponent } from './menu/menu.component';
+
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -43,6 +49,9 @@ import { MenuComponent } from './menu/menu.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireStorageModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAOJ2XdMlZGFwq3G-U3pJdA_v8Rui49YA8',
       libraries: ['places']
