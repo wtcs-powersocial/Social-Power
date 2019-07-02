@@ -3,8 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
-};
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyACPBaJZmhFI5Q_qcmEDZvC1aUVW5kaDqE',
+    authDomain: 'wtcs-zello.firebaseapp.com',
+    databaseURL: 'https://wtcs-zello.firebaseio.com',
+    projectId: 'wtcs-zello',
+    storageBucket: 'wtcs-zello.appspot.com',
+    messagingSenderId: '970879097994',
+    appId: '1:970879097994:web:86efa2215ceaf824'
+  }
+  };
 
 /*
  * For easier debugging in development mode, you can import the following file
