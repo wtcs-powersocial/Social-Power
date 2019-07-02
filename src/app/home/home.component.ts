@@ -13,15 +13,21 @@ import { DenunciaService } from '../denuncia.service';
 })
 export class HomeComponent implements OnInit {
 
-  posts: DenunciaModel[];
+  posts: any = null;
 
   constructor(private service: DenunciaService) { }
 
   ngOnInit() {
-    console.log('começou');
-    return this.service.getDenunciasAll()
-    .then((response: DenunciaModel[]) => this.posts = response)
-    .catch((response: any) => console.log(response));
+    this.service.getDenunciasAll().subscribe(
+      res => {
+        this.posts = res;
+        console.log(res);
+      },
+      err => {
+        alert('Caro usuário(a), infelizmente ocorreu inesperado.');
+        console.log(err);
+      }
+    );
   }
 
   showAll(): void {

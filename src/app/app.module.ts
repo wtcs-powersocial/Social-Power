@@ -1,12 +1,17 @@
+import { LoginService } from './login/login.service';
+import { SentinelaGuard } from './sentinela.guard';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 // instalados
 import { AgmCoreModule } from '@agm/core';
 import {WebcamModule} from 'ngx-webcam';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
+import { TokenInterceptorService } from './token-interceptor.service';
+
 // meus componentes
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -45,7 +50,13 @@ import { MenuComponent } from './menu/menu.component';
     WebcamModule,
     AngularFontAwesomeModule
   ],
-  providers: [],
+  providers: [SentinelaGuard, LoginService, TokenInterceptorService,
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true
+  }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

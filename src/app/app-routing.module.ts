@@ -1,3 +1,4 @@
+import { SentinelaGuard } from './sentinela.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -11,10 +12,10 @@ import { HistoryComponent } from './history/history.component';
 const routes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'cadastro', component: NewLoginComponent},
-  {path: 'principal', component: HomeComponent},
-  {path: 'show', component: MapComponent},
-  {path: 'nova-denuncia', component: DenouceComponent},
-  {path: 'minhas-denuncias', component: HistoryComponent}
+  {path: 'principal', component: HomeComponent, canActivate: [SentinelaGuard]},
+  {path: 'show', component: MapComponent, canActivate: [SentinelaGuard]},
+  {path: 'nova-denuncia', component: DenouceComponent, canActivate: [SentinelaGuard]},
+  {path: 'minhas-denuncias', component: HistoryComponent, canActivate: [SentinelaGuard]}
 ];
 
 @NgModule({

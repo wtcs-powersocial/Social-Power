@@ -22,14 +22,8 @@ export class DenunciaService {
    }
 
    // consume a nossa API fake para retornar todas as ofertas
-   public getDenunciasAll(): Promise<DenunciaModel[]> {
-    return this.httpService.get(`${urlApi}/denouces`)
-    .toPromise()
-    .then((response: any) => {
-      console.log(response);
-      return response;
-    })
-    .catch((response: any) => response);
+   public getDenunciasAll(): Observable<any[]> {
+    return this.httpService.get<any[]>(`${urlApi}/denouces`);
   }
 
   public getDenunciasByUser(id: number): Promise<DenunciaModel[]> {
