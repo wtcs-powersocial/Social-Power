@@ -27,11 +27,15 @@ export class LoginService {
 
   public logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem( 'user');
     this.roteador.navigate(['']);
   }
 
   public getToken() {
     return localStorage.getItem('token');
+  }
+  public getUser() {
+    return JSON.parse(localStorage.getItem('user'));
   }
 
 }

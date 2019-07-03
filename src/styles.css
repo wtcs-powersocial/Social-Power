@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
+.container-s {
+    margin-top: 10px;
+}
+
 .login-page {
     background-image: url('src/assets/new-york-crop.png');
     background-repeat: no-repeat;
@@ -94,6 +98,9 @@ body {
         padding-left: 200px;
     }
     .my-top {
+        margin-top: 50px;
+    }
+    .margem {
         margin-top: 50px;
     }
 }

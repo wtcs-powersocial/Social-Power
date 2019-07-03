@@ -1,3 +1,4 @@
+import { LoginService } from './../login/login.service';
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http'; // navigate
 import { Subscription, Observable, from} from "rxjs";
@@ -45,11 +46,13 @@ export class DenouceComponent implements OnInit {
   currrentLng: number;
   // exibir esses dados em uma outra div?
   show: boolean;
+  user: any = null;
   constructor(
     private service: DenunciaService,
     private rota: Router,
     private http: HttpClient,
-    private afStorage: AngularFireStorage
+    private afStorage: AngularFireStorage,
+    private serviceLogin: LoginService
   ) {
   }
 
@@ -63,6 +66,9 @@ export class DenouceComponent implements OnInit {
       },
       err => console.log(err)
     );
+
+    this.user = this.serviceLogin.getUser();
+    console.log(this.user);
   }
 
 
