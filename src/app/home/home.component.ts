@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
-import { DomSanitizer } from '@angular/platform-browser';
-
-import { DenunciaModel } from '../shared/denuncia.model';
 import { DenunciaService } from '../denuncia.service';
 
-import * as sdkFirebase from 'firebase';
-import { FirebaseModel } from './../shared/firebase';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +11,6 @@ import { FirebaseModel } from './../shared/firebase';
 export class HomeComponent implements OnInit {
 
   posts: any = null;
-  sdk: FirebaseModel;
 
   constructor(private service: DenunciaService) { }
 

@@ -1,12 +1,11 @@
-import { async } from '@angular/core/testing';
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http'; // navigate
 import { Subscription, Observable, from} from "rxjs";
+import { async } from '@angular/core/testing';
 
 import { DenunciaService } from '../denuncia.service';
 import { CategoryModel } from '../shared/category.model';
 import { Router } from '@angular/router';
-import {FirebaseModel} from '../shared/firebase';
 
 import { AngularFireStorage, AngularFireUploadTask, AngularFireStorageReference } from 'angularfire2/storage';
 import { storage } from 'firebase';

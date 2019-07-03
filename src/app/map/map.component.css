@@ -1,17 +1,33 @@
 agm-map {
-  height: 350px;
+    height: 450px;
 }
 
 .my-box {
-  color: white;
-  background-color: #EE5C42;
-  padding: 10px;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  border-radius: 5px;
+    color: white;
+    background-color: #EE5C42;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
 }
 
 .my-map {
-  margin: 0 auto;
-  width: 900px;
+    margin: 0 auto;
+    width: 900px;
+    margin-bottom: 10px;
+}
+
+.map-container {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+}
+
+.mapa {
+    left: 0;
+    top: 0;
+    height: 90%;
+    width: 100%;
+    position: absolute;
 }

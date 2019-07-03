@@ -1,14 +1,19 @@
 .my-bg {
-  background-color: #4abdac;
+    background-color: #009595;
 }
 
-.my-color {color: white;}
+.my-color {
+    color: white;
+}
+
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
-.my-space {padding: 10px;}
+.my-space {
+    padding: 10px;
+}
 
 .nav {
-  position: fixed;
+    position: fixed;
 }
