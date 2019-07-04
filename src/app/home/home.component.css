@@ -1,21 +1,40 @@
-
 .btn {
-  margin: 2px;
-  float: left;
+    margin: 2px;
+    float: left;
 }
 
 .row {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .my-box-btn {
-  left: 50%;
+    left: 50%;
 }
 
 .container {
-  margin-top: 10px;
-  margin-bottom: 50px;
-  font-size: 12pt;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    font-size: 12pt;
 }
 
-.my-space {margin-bottom: 5px;}
+.my-space {
+    margin-bottom: 5px;
+}
+
+.btn-outline-master {
+    background-color: white;
+    color: #2e9283;
+    border-width: 1;
+    border: solid;
+    border-radius: 5%;
+    border-color: #2e9283;
+}
+
+.btn-outline-master:hover {
+    background-color: #2e9283;
+    color: white;
+}
+
+i {
+    color: white;
+}
