@@ -29,7 +29,12 @@
                     </li>
 
                     <li>
-                        <input type="file" id="icon" name='icon' style='width: 100%' (change)='uploadImage($event);' />
+                        <div class="input-group mb-3">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="icon" name='icon' (change)='uploadImage($event);'>
+                                <label class="custom-file-label" for="inputGroupFile01">Imagem de perfil</label>
+                            </div>
+                        </div>
                     </li>
 
                     <li>

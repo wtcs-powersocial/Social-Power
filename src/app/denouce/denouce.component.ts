@@ -26,13 +26,16 @@ export class DenouceComponent implements OnInit {
   complete: boolean;
   caminhoImagem: string;
   ref: AngularFireStorageReference;
+  trava: boolean;
+  img_denuncia: File;
+
   // task: AngularFireUploadTask;
   urlFirebase: any;
 
 
   inscricao: Subscription;
   newDenuncia: {}; // denuncia atual
-  img_denuncia: File;
+
   categories: CategoryModel[];
   categorySelected: string;
   formData = new FormData();
@@ -57,6 +60,7 @@ export class DenouceComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.trava = false;
     this.display();
     this.service.getCategories().subscribe(
       res => {
@@ -102,33 +106,51 @@ export class DenouceComponent implements OnInit {
   }
   // insert de teste, no modo de produção receberá um objeto denuncia.
   insert(): void {
+    // testes
+    const lat = -6.768945;
+    const long = -43.030204;
     // this.setUpload();
-    console.log(this.caminhoImagem);
-    if (this.caminhoImagem) {
-      this.formData.append('imagem', this.caminhoImagem);
-      this.formData.append('latitude', this.currentLat.toString());
-      this.formData.append('longitude', this.currrentLng.toString());
-      this.formData.append('author', 'teste');
-      this.formData.append('descricao', this.description);
-      this.formData.append('categoria', this.categorySelected);
+    if (!this.trava) {
+      this.trava = true;
+      this.setUpload();
+     }
 
-      this.service.insert(this.formData).subscribe(
-        res => { console.log(res); this.rota.navigate(['principal'] );
-        },
-        err => console.log(err)
-      );
-  } else { console.log('url not found'); }
+    if (this.caminhoImagem) {
+      try {
+        const dadosUser = {
+          id: this.user._id,
+          name: this.user.nameComplete
+        };
+        // inserir
+        this.formData.append('imagem', this.caminhoImagem);
+        this.formData.append('latitude', lat.toString());
+        this.formData.append('longitude', long.toString());
+        this.formData.append('autor', JSON.stringify(dadosUser));
+        this.formData.append('descricao', this.description);
+        this.formData.append('categoria', this.categorySelected);
+
+        this.service.insert(this.formData).subscribe(
+          res => { console.log(res); this.rota.navigate(['principal'] );
+          },
+          err => console.log(err)
+        );
+      } catch (error) {
+        console.log('Erro: Dados do usuário');
+        console.log(error);
+      }
+
+  } else { console.log('Aguardando forebase store'); }
 }
 
 
    upload(event) {
     this.complete = false;
     this.img_denuncia = event.target.files[0];
-    this.setUpload();
   }
 
   async setUpload() {
-    const path = `denouces/${this.img_denuncia.name}`;
+    const nameImgFirebase = Date.now() + this.img_denuncia.name;
+    const path = `denouces/${nameImgFirebase}`;
     const fileRef = this.afStorage.ref(path.replace(/\s/g, ''));
     this.task = this.afStorage.upload(path.replace(/\s/g, ''), this.img_denuncia);
     await this.task.then( async up => {

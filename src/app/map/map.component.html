@@ -8,8 +8,7 @@
             <agm-map [latitude]='latitude' [longitude]='longitude' [zoom]='zoom'>
                 <agm-marker *ngFor='let denuncia of denuncias' [latitude]='denuncia.latitude' [longitude]='denuncia.longitude' [markerDraggable]='false' [title]='denuncia.categoria'>
                     <agm-info-window [disableAutoPan]="true">
-                        <p><strong>{{denuncia.descricao}}</strong></p>
-                        <img [src]='denuncia.imgDenuncia'>
+                        <img [src]='denuncia.img_denuncia' class='img-thumbnail'>
                     </agm-info-window>
                 </agm-marker>
             </agm-map>

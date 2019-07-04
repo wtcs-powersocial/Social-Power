@@ -6,7 +6,10 @@
                 <div class="card-grid">
                     <div class="card-wrap">
                         <div class="card border shadow-sm">
-                            <p><strong class='main-color'>{{post.autor}}</strong></p>
+                            <div class="row">
+                                <p><strong class='main-color'>{{post.autor.name}}</strong></p>
+                                <p><strong>{{post.dataDenuncia}}</strong></p>
+                            </div>
                             <img [src]="post.img_denuncia" class="card-img img-fluid" alt="imagem da denúncia">
                             <div class="card-body">
                                 <p class="card-title"><strong>Categoria:</strong> {{post.categoria}}</p>

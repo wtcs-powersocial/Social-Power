@@ -24,9 +24,15 @@
 
                     <div class="form-group">
                         <button type="button" class="btn btn-secondary my-s" (focus)='showPosition()'>
-                    <i class="fa fa-map-marker fa-2x"></i>
-                    </button>
-                        <input (change)='upload($event);' type="file" accept="image/*" capture id="img_denuncia" name='img_denuncia'>
+                           <i class="fa fa-map-marker fa-2x"></i>
+                        </button>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="icon" name='icon' (change)='upload($event);'>
+                            <label class="custom-file-label" for="inputGroupFile01">Insira uma imagem</label>
+                        </div>
                     </div>
 
                     <div class="forms group">

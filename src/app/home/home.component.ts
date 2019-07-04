@@ -25,8 +25,4 @@ export class HomeComponent implements OnInit {
       }
     );
   }
-
-  showAll(): void {
-    console.log(this.posts);
-  }
 }
