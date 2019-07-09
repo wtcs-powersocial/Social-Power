@@ -159,6 +159,11 @@ i {
     box-shadow: 0 0 0 4px;
 }
 
+li {
+    font-family: 'Play', sans-serif;
+    font-size: 12pt;
+}
+
 
 /*
 @media (min-width: 720px) {

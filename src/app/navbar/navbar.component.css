@@ -25,3 +25,7 @@ span:hover {
 a:hover {
     color: #EE5C42;
 }
+
+span {
+    font-family: 'Audiowide', cursive;
+}
