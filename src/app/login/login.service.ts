@@ -38,4 +38,9 @@ export class LoginService {
     return JSON.parse(localStorage.getItem('user'));
   }
 
+  public getUserById() {
+    const dados = this.getUser();
+    return dados._id;
+  }
+
 }

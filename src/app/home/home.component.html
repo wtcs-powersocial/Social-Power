@@ -3,8 +3,8 @@
 </section>
 
 <div class="centralizador">
-    <div class="row mt-5">
-        <div class="col" *ngFor="let post of posts">
+    <div class="mt-5">
+        <div class="row" *ngFor="let post of posts">
 
             <div class="card text-center">
                 <div class="card-body">
@@ -33,13 +33,16 @@
                                 <i class="fa fa-thumbs-down fa-2x"></i><i>{{getDeslike(post)}}</i>
                             </a>
                         </div>
-                        <br>
-                        <div class="input-group mb-3 flo" style='width: 90%'>
-                            <input type="text" [id]='post._id' class="form-control" placeholder="Deixe o seu comentário ..." class='m-0 px-3 py-2 z-depth-0 waves-effect'>
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-info m-0 px-3 py-2 z-depth-0 waves-effect" type="button" (click)='setComentario(post._id);'>Comentar</button>
+                        <!--
+                          <div class="float-right">
+                            <div class="input-group mb-3 flo" style='width: 90%'>
+                                <input type="text" [id]='post._id' class="form-control" placeholder="Deixe o seu comentário ..." class='m-0 px-3 py-2 z-depth-0 waves-effect'>
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-info m-0 px-3 py-2 z-depth-0 waves-effect" type="button" (click)='setComentario(post._id);'>Comentar</button>
+                                </div>
                             </div>
                         </div>
+                       -->
 
                         <div class="accordions">
                             <div class="accordion-item" *ngFor="let comentario of post.comentarios">

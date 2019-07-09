@@ -27,10 +27,8 @@ export class DenunciaService {
     return this.httpService.get<any[]>(`${urlApi}/denouces`);
   }
 
-  public getDenunciasByUser(id: number): Promise<DenunciaModel[]> {
-    return this.httpService.get(`${urlApi}/denuncias/${id}`).toPromise()
-    .then((r: any) => r)
-    .catch((r: any) => r);
+  public getDenunciasByUser(id: any): Observable<any[]> {
+    return this.httpService.get<any[]>(`${urlApi}/denouces/user/${id}`);
   }
 
   public getCategories(): any {

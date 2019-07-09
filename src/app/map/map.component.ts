@@ -24,7 +24,6 @@ export class MapComponent implements OnInit {
     this.service.getDenunciasAll().subscribe(
       res => {
         this.denuncias = res;
-        console.log(res);
       },
       err => {
         alert('Erro ao carregar mapa de denúncias.');

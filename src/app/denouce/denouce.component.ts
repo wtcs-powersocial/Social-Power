@@ -106,9 +106,6 @@ export class DenouceComponent implements OnInit {
   }
   // insert de teste, no modo de produção receberá um objeto denuncia.
   insert(): void {
-    // testes
-    const lat = -6.768945;
-    const long = -43.030204;
     // this.setUpload();
     if (!this.trava) {
       this.trava = true;
@@ -123,8 +120,8 @@ export class DenouceComponent implements OnInit {
         };
         // inserir
         this.formData.append('imagem', this.caminhoImagem);
-        this.formData.append('latitude', lat.toString());
-        this.formData.append('longitude', long.toString());
+        this.formData.append('latitude', this.currentLat.toString());
+        this.formData.append('longitude', this.currrentLng.toString());
         this.formData.append('autor', JSON.stringify(dadosUser));
         this.formData.append('descricao', this.description);
         this.formData.append('categoria', this.categorySelected);
