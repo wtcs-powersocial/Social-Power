@@ -64,7 +64,10 @@ export class HomeComponent implements OnInit {
       msg: content
     };
     this.home.insertComment(idPost, comment).subscribe(
-      res => console.log(res),
+      res => {
+        console.log(res);
+        window.location.reload();
+      },
       err => console.log(err)
     );
   }

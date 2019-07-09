@@ -1,69 +1,59 @@
-<app-menu></app-menu>
-<div class="container margem" style='margin-top: 60px;'>
-    <div class="row">
-        <div class="col-sm">
-            <div *ngFor="let post of posts">
-                <div class="card-grid">
-                    <div class="card-wrap">
-                        <div class="card border shadow-sm">
-                            <div class="row">
-                                <div class="col">
-                                    <p><strong class='main-color'>{{post.autor.name}}</strong></p>
-                                </div>
-                                <div class="col">
-                                    <p class='float-right'><strong>{{post.dataDenuncia | date: 'dd/MM/yyyy'}}</strong></p>
-                                </div>
-                            </div>
-                            <img [src]="post.img_denuncia" class="card-img img-fluid" alt="imagem da denúncia">
-                            <div class="card-body">
-                                <p class="card-title"><strong>Categoria:</strong> {{post.categoria}}</p>
-                                <p class="card-text"><strong>Denúncia:</strong> {{post.descricao}}</p>
-                            </div>
-                            <div class="card-footer text-muted">
-                                <div class='float-right'>
-                                    <a class="btn btn-primary my-s" (click)='insertLikeOrDeslike(post._id, true)'>
-                                        <i class="fa fa-thumbs-up fa-2x"></i><i>{{getLike(post)}}</i>
-                                    </a>
-                                    <a class="btn btn-danger my-s" (click)='insertLikeOrDeslike(post._id, false)'>
-                                        <i class="fa fa-thumbs-down fa-2x"></i><i>{{getDeslike(post)}}</i>
-                                    </a>
-                                </div>
-                                <div class="input-group mb-3" style='width: 90%'>
-                                    <input type="text" [id]='post._id' class="form-control" placeholder="Deixe o seu comentário ..." class='m-0 px-3 py-2 z-depth-0 waves-effect'>
-                                    <div class="input-group-append">
-                                        <button class="btn btn-md btn-outline-info m-0 px-3 py-2 z-depth-0 waves-effect" type="button" (click)='setComentario(post._id);'>Comentar</button>
-                                    </div>
-                                </div>
-                                <mdb-accordion [multiple]="false" aria-multiselectable="true">
-                                    <mdb-accordion-item [collapsed]="true" *ngFor="let item of itemsList">
-                                        <mdb-accordion-item-head> {{ item.title }} </mdb-accordion-item-head>
-                                        <mdb-accordion-item-body> {{ item.description }} </mdb-accordion-item-body>
-                                    </mdb-accordion-item>
-                                </mdb-accordion>
-                                <div class="accordion" id="accordionExample">
-                                    <div class="card" *ngFor="let comentario of post.comentarios">
-                                        <div class="card-header" [id]="comentario.idUser">
-                                            <h2 class="mb-0">
-                                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#comentario.idUser" aria-expanded="false" aria-controls="comentario.id_comentario">
-                                            {{comentario.nameUser}}
-                                            </button>
-                                            </h2>
-                                        </div>
+<section>
+    <app-menu></app-menu>
+</section>
 
-                                        <div [id]="comentario.id_comentario" class="collapse show" aria-labelledby="comentario.idUser" data-parent="#accordionExample">
-                                            <div class="card-body">
-                                                {{comentario.coment}}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+<div class="centralizador">
+    <div class="row mt-5">
+        <div class="col" *ngFor="let post of posts">
 
-                            </div>
+            <div class="card text-center">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <p><strong class='main-color'>{{post.autorName}}</strong></p>
+                        </div>
+                        <div class="col">
+                            <p class='float-right'><strong>{{post.dataDenuncia | date: 'dd/MM/yyyy'}}</strong></p>
                         </div>
                     </div>
+                    <div class='card-img'>
+                        <img [src]="post.img_denuncia" class="img-fluid" alt="imagem da denúncia">
+                    </div>
+                    <div class="card-body">
+                        <p class="card-title"><strong>Categoria:</strong> {{post.categoria}}</p>
+                        <p class="card-text"><strong>Denúncia:</strong> {{post.descricao}}</p>
+                    </div>
+
+                    <div class="card-footer text-muted">
+                        <div class='float-right'>
+                            <a class="btn btn-primary my-s" (click)='insertLikeOrDeslike(post._id, true)'>
+                                <i class="fa fa-thumbs-up fa-2x"></i><i>{{getLike(post)}}</i>
+                            </a>
+                            <a class="btn btn-danger my-s" (click)='insertLikeOrDeslike(post._id, false)'>
+                                <i class="fa fa-thumbs-down fa-2x"></i><i>{{getDeslike(post)}}</i>
+                            </a>
+                        </div>
+                        <br>
+                        <div class="input-group mb-3 flo" style='width: 90%'>
+                            <input type="text" [id]='post._id' class="form-control" placeholder="Deixe o seu comentário ..." class='m-0 px-3 py-2 z-depth-0 waves-effect'>
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-info m-0 px-3 py-2 z-depth-0 waves-effect" type="button" (click)='setComentario(post._id);'>Comentar</button>
+                            </div>
+                        </div>
+
+                        <div class="accordions">
+                            <div class="accordion-item" *ngFor="let comentario of post.comentarios">
+                                <input type="checkbox" [id]="comentario.id_comentario" name="accordion" checked="checked" />
+                                <label [for]="comentario.id_comentario">{{comentario.nameUser}}</label>
+                                <div class="accordion-content">{{comentario.coment}}</div>
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
+
         </div>
     </div>
-
 </div>
