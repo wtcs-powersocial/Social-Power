@@ -155,13 +155,17 @@ i {
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid;
-    border-color: #4abdac;
+    border-color: #EE5C42;
     box-shadow: 0 0 0 4px;
 }
 
 li {
     font-family: 'Play', sans-serif;
     font-size: 12pt;
+}
+
+li:hover i {
+    color: #EE5C42;
 }
 
 
