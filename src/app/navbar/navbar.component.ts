@@ -12,7 +12,7 @@ export class NavbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.logo = '../assets/logo.png';
+    this.logo = '../assets/logo/logo.png';
   }
 
 }

@@ -17,3 +17,11 @@ a {
 .nav {
     position: fixed;
 }
+
+span:hover {
+    color: #EE5C42;
+}
+
+a:hover {
+    color: #EE5C42;
+}
