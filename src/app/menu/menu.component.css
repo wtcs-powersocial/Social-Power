@@ -142,3 +142,31 @@
 i {
     margin: 5px;
 }
+
+.avatar {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 2em 0.5em;
+    text-align: center;
+}
+
+.avatar img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid;
+    border-color: #4abdac;
+    box-shadow: 0 0 0 4px;
+}
+
+
+/*
+@media (min-width: 720px) {
+    .avatar img {
+        width: 30px;
+        height: 30px;
+        float: right;
+    }
+}
+
+*/
