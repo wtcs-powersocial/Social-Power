@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { ButtonModule } from 'truly-ui';
+import { ButtonModule, AccordionModule } from 'truly-ui';
 
 import { ModuleMenuModule } from './../module-menu/module-menu.module';
 
@@ -18,6 +18,7 @@ const components = [HomeComponent, HistoryComponent];
     CommonModule,
     RouterModule,
     ButtonModule,
+    AccordionModule,
     ModuleMenuModule
   ],
   exports: components

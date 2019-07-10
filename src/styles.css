@@ -5,6 +5,10 @@
     left: 0;
 }
 
+.my-box-comment {
+    background-color: rgba(223, 217, 217, 0.986);
+}
+
 .login-page {
     background-image: url('src/assets/new-york-crop.png');
     background-repeat: no-repeat;

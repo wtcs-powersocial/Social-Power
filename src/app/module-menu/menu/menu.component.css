@@ -159,7 +159,8 @@ i {
     box-shadow: 0 0 0 4px;
 }
 
-li {
+li,
+span {
     font-family: 'Play', sans-serif;
     font-size: 12pt;
 }
