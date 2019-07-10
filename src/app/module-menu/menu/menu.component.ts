@@ -9,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
+  userLogado: any = null;
   constructor(private rota: Router, private service: LoginService) { }
 
   ngOnInit() {
+    this.userLogado = this.service.getUser();
   }
 
   public logout() {
