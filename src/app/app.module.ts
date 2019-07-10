@@ -1,48 +1,40 @@
-import { SentinelaGuard } from './sentinela.guard';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 // instalados
-import { AgmCoreModule } from '@agm/core';
-import {WebcamModule} from 'ngx-webcam';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 
+// meus módulos
+import { BasicModule } from './basic/basic.module';
+import { DenunciasModule } from './denuncias/denuncias.module';
+import { ModuleLoginModule } from './module-login/module-login.module';
+import { ModuleNewDenunciaModule } from './module-new-denuncia/module-new-denuncia.module';
+import { ModuleMapaModule } from './module-mapa/module-mapa.module';
+// import { ModuleMenuModule } from './module-menu/module-menu.module';
 
-import { LoginService } from './login/login.service';
+import { LoginService } from './login.service';
+import { DenunciaService } from './denuncia.service';
 import { TokenInterceptorService } from './token-interceptor.service';
+import { SentinelaGuard } from './sentinela.guard';
+
+
 
 // meus componentes
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DenouceComponent } from './denouce/denouce.component';
-import { FooterComponent } from './footer/footer.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { MapComponent } from './map/map.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { NewLoginComponent } from './new-login/new-login.component';
-import { HistoryComponent } from './history/history.component';
-import { MenuComponent } from './menu/menu.component';
 
 import { environment } from '../environments/environment';
 
+import { CoreModule } from 'truly-ui'; // CoreModule
+
 @NgModule({
   declarations: [
-    AppComponent,
-    DenouceComponent,
-    FooterComponent,
-    HomeComponent,
-    LoginComponent,
-    MapComponent,
-    NavbarComponent,
-    NewLoginComponent,
-    HistoryComponent,
-    MenuComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -52,14 +44,16 @@ import { environment } from '../environments/environment';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireStorageModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAOJ2XdMlZGFwq3G-U3pJdA_v8Rui49YA8',
-      libraries: ['places']
-    }),
-    WebcamModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    CoreModule.forRoot({theme: 'default'}),
+    BasicModule,
+    DenunciasModule,
+    ModuleLoginModule,
+    ModuleNewDenunciaModule,
+    ModuleMapaModule
+    // ModuleMenuModule
   ],
-  providers: [SentinelaGuard, LoginService, TokenInterceptorService,
+  providers: [SentinelaGuard, LoginService, DenunciaService, TokenInterceptorService,
   {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,

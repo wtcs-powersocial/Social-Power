@@ -6,8 +6,6 @@ import { retry } from 'rxjs/operators';
 
 import { DenunciaModel } from './shared/denuncia.model';
 import { urlApi } from './shared/app.api';
-import { CategoryModel } from './shared/category.model';
-import { UserModel } from './shared/user.model';
 import { storage } from 'firebase';
 
 @Injectable({

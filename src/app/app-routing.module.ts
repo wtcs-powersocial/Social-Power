@@ -2,12 +2,12 @@ import { SentinelaGuard } from './sentinela.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { LoginComponent } from './login/login.component';
-import { NewLoginComponent } from './new-login/new-login.component';
-import { HomeComponent } from './home/home.component';
-import { MapComponent } from './map/map.component';
-import { DenouceComponent } from './denouce/denouce.component';
-import { HistoryComponent } from './history/history.component';
+import { LoginComponent } from './module-login/login/login.component';
+import { NewLoginComponent } from './module-login/new-login/new-login.component';
+import { HomeComponent } from './denuncias/home/home.component';
+import { MapComponent } from './module-mapa/map/map.component';
+import { DenouceComponent } from './module-new-denuncia/denouce/denouce.component';
+import { HistoryComponent } from './denuncias/history/history.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},

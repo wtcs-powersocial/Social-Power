@@ -25,7 +25,12 @@
                         "styles": [
                             "src/styles.css",
                             "./node_modules/bootstrap/dist/css/bootstrap.css",
-                            "./node_modules/font-awesome/css/font-awesome.css"
+                            "./node_modules/font-awesome/css/font-awesome.css",
+                            "./node_modules/@angular/cdk/overlay-prebuilt.css",
+                            "./node_modules/truly-ui/css/icons/dx-icons/css/icons.scss",
+                            "./node_modules/truly-ui/css/icons/fa-icons/css/icons.scss",
+                            "./node_modules/truly-ui/css/icons/ion-icons/css/icons.scss",
+                            "./node_modules/truly-ui/css/icons/animations.scss"
                         ],
                         "scripts": [
                             "./node_modules/jquery/dist/jquery.js",
