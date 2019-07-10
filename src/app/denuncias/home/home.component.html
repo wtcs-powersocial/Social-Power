@@ -43,13 +43,15 @@
                                 </div>
                             </div>
 
-                            <div class="accordions">
-                                <div class="accordion-item" *ngFor="let comentario of post.comentarios">
-                                    <input type="checkbox" [id]="comentario.id_comentario" name="accordion" checked="checked" />
-                                    <label [for]="comentario.id_comentario">{{comentario.nameUser}}</label>
-                                    <div class="accordion-content">{{comentario.coment}}</div>
-                                </div>
-                            </div>
+                            <tl-accordion [singleOpened]="true" [color]="'basic'">
+                                <tl-accordion-item [title]="'Comentários'">
+                                    <tl-accordion [singleOpened]="true" style="padding: 5px;" [color]="'information'">
+                                        <tl-accordion-item [heightHeader]="'45px;'" *ngFor="let comentario of post.comentarios" [title]="comentario.nameUser" [id]="comentario.id_comentario">
+                                            {{comentario.coment}}
+                                        </tl-accordion-item>
+                                    </tl-accordion>
+                                </tl-accordion-item>
+                            </tl-accordion>
 
                         </div>
 

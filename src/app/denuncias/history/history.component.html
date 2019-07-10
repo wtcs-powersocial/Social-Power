@@ -41,10 +41,10 @@
                             </div>
                         </div>
 
-                        <tl-accordion [singleOpened]="true" style="background-color: rgba(223, 217, 217, 0.986);">
+                        <tl-accordion [singleOpened]="true" [color]="'basic'">
                             <tl-accordion-item [title]="'Comentários'">
-                                <tl-accordion [singleOpened]="true">
-                                    <tl-accordion-item *ngFor="let comentario of post.comentarios" [title]="comentario.nameUser" [id]="comentario.id_comentario">
+                                <tl-accordion [singleOpened]="true" style="padding: 5px;" [color]="'information'">
+                                    <tl-accordion-item [heightHeader]="'45px;'" *ngFor="let comentario of post.comentarios" [title]="comentario.nameUser" [id]="comentario.id_comentario">
                                         {{comentario.coment}}
                                     </tl-accordion-item>
                                 </tl-accordion>
